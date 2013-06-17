@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE7DE28E176EF27500996FD6 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7DE28C176EF27500996FD6 /* NewsViewController.m */; };
+		CE7DE28F176EF27500996FD6 /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7DE28D176EF27500996FD6 /* NewsViewController.xib */; };
+		CE7DE293176EF9C200996FD6 /* NewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7DE291176EF9C200996FD6 /* NewsTableViewController.m */; };
 		CEA7B648176B148600DB68D7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA7B647176B148600DB68D7 /* UIKit.framework */; };
 		CEA7B64A176B148600DB68D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA7B649176B148600DB68D7 /* Foundation.framework */; };
 		CEA7B64C176B148600DB68D7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA7B64B176B148600DB68D7 /* CoreGraphics.framework */; };
@@ -368,10 +371,17 @@
 		CEA7B922176B14B900DB68D7 /* zhenyu_navigation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEA7B7C2176B14B900DB68D7 /* zhenyu_navigation@2x.png */; };
 		CEA7B923176B14B900DB68D7 /* zhong_daxue_navigation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEA7B7C3176B14B900DB68D7 /* zhong_daxue_navigation@2x.png */; };
 		CEA7B924176B14B900DB68D7 /* zhong_dayu_navigation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEA7B7C4176B14B900DB68D7 /* zhong_dayu_navigation@2x.png */; };
+		CEC83366176EECAE00FCB190 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC83365176EECAE00FCB190 /* icon.png */; };
+		CEC83368176EECBD00FCB190 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC83367176EECBD00FCB190 /* icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CEA7B644176B148600DB68D7 /* SinaNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7DE28B176EF27500996FD6 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		CE7DE28C176EF27500996FD6 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		CE7DE28D176EF27500996FD6 /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
+		CE7DE290176EF9C200996FD6 /* NewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewController.h; sourceTree = "<group>"; };
+		CE7DE291176EF9C200996FD6 /* NewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewController.m; sourceTree = "<group>"; };
+		CEA7B644176B148600DB68D7 /* 新浪新闻.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新浪新闻.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA7B647176B148600DB68D7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CEA7B649176B148600DB68D7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CEA7B64B176B148600DB68D7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -736,6 +746,8 @@
 		CEA7B7C2176B14B900DB68D7 /* zhenyu_navigation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhenyu_navigation@2x.png"; sourceTree = "<group>"; };
 		CEA7B7C3176B14B900DB68D7 /* zhong_daxue_navigation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhong_daxue_navigation@2x.png"; sourceTree = "<group>"; };
 		CEA7B7C4176B14B900DB68D7 /* zhong_dayu_navigation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhong_dayu_navigation@2x.png"; sourceTree = "<group>"; };
+		CEC83365176EECAE00FCB190 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		CEC83367176EECBD00FCB190 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -752,9 +764,76 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE7DE27E176EEF5000996FD6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE7DE288176EF1C400996FD6 /* News */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		CE7DE27F176EEF6900996FD6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE7DE289176EF1D800996FD6 /* News */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		CE7DE280176EEF8300996FD6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE7DE28A176EF1E500996FD6 /* News */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		CE7DE281176EEFA500996FD6 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		CE7DE282176EEFE000996FD6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CEA7B664176B14B800DB68D7 /* images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		CE7DE288176EF1C400996FD6 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				CE7DE28B176EF27500996FD6 /* NewsViewController.h */,
+				CE7DE28C176EF27500996FD6 /* NewsViewController.m */,
+				CE7DE28D176EF27500996FD6 /* NewsViewController.xib */,
+				CE7DE290176EF9C200996FD6 /* NewsTableViewController.h */,
+				CE7DE291176EF9C200996FD6 /* NewsTableViewController.m */,
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
+		CE7DE289176EF1D800996FD6 /* News */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
+		CE7DE28A176EF1E500996FD6 /* News */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
 		CEA7B63B176B148600DB68D7 = {
 			isa = PBXGroup;
 			children = (
+				CEC83367176EECBD00FCB190 /* icon@2x.png */,
+				CEC83365176EECAE00FCB190 /* icon.png */,
 				CEA7B64D176B148600DB68D7 /* SinaNews */,
 				CEA7B646176B148600DB68D7 /* Frameworks */,
 				CEA7B645176B148600DB68D7 /* Products */,
@@ -764,7 +843,7 @@
 		CEA7B645176B148600DB68D7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CEA7B644176B148600DB68D7 /* SinaNews.app */,
+				CEA7B644176B148600DB68D7 /* 新浪新闻.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -782,7 +861,11 @@
 		CEA7B64D176B148600DB68D7 /* SinaNews */ = {
 			isa = PBXGroup;
 			children = (
-				CEA7B664176B14B800DB68D7 /* images */,
+				CE7DE27E176EEF5000996FD6 /* Controllers */,
+				CE7DE27F176EEF6900996FD6 /* Models */,
+				CE7DE280176EEF8300996FD6 /* Views */,
+				CE7DE281176EEFA500996FD6 /* Library */,
+				CE7DE282176EEFE000996FD6 /* Resources */,
 				CEA7B656176B148600DB68D7 /* colyAppDelegate.h */,
 				CEA7B657176B148600DB68D7 /* colyAppDelegate.m */,
 				CEA7B64E176B148600DB68D7 /* Supporting Files */,
@@ -1180,7 +1263,7 @@
 			);
 			name = SinaNews;
 			productName = SinaNews;
-			productReference = CEA7B644176B148600DB68D7 /* SinaNews.app */;
+			productReference = CEA7B644176B148600DB68D7 /* 新浪新闻.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1571,6 +1654,9 @@
 				CEA7B922176B14B900DB68D7 /* zhenyu_navigation@2x.png in Resources */,
 				CEA7B923176B14B900DB68D7 /* zhong_daxue_navigation@2x.png in Resources */,
 				CEA7B924176B14B900DB68D7 /* zhong_dayu_navigation@2x.png in Resources */,
+				CEC83366176EECAE00FCB190 /* icon.png in Resources */,
+				CEC83368176EECBD00FCB190 /* icon@2x.png in Resources */,
+				CE7DE28F176EF27500996FD6 /* NewsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1583,6 +1669,8 @@
 			files = (
 				CEA7B654176B148600DB68D7 /* main.m in Sources */,
 				CEA7B658176B148600DB68D7 /* colyAppDelegate.m in Sources */,
+				CE7DE28E176EF27500996FD6 /* NewsViewController.m in Sources */,
+				CE7DE293176EF9C200996FD6 /* NewsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1662,7 +1750,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SinaNews/SinaNews-Prefix.pch";
 				INFOPLIST_FILE = "SinaNews/SinaNews-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "新浪新闻";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1673,7 +1761,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SinaNews/SinaNews-Prefix.pch";
 				INFOPLIST_FILE = "SinaNews/SinaNews-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "新浪新闻";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1697,6 +1785,7 @@
 				CEA7B663176B148600DB68D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

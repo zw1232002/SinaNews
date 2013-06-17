@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CEA7B643176B148600DB68D7"
-               BuildableName = "SinaNews.app"
+               BuildableName = "&#26032;&#28010;&#26032;&#38395;.app"
                BlueprintName = "SinaNews"
                ReferencedContainer = "container:SinaNews.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CEA7B643176B148600DB68D7"
-            BuildableName = "SinaNews.app"
+            BuildableName = "&#26032;&#28010;&#26032;&#38395;.app"
             BlueprintName = "SinaNews"
             ReferencedContainer = "container:SinaNews.xcodeproj">
          </BuildableReference>
@@ -52,7 +52,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CEA7B643176B148600DB68D7"
-            BuildableName = "SinaNews.app"
+            BuildableName = "&#26032;&#28010;&#26032;&#38395;.app"
             BlueprintName = "SinaNews"
             ReferencedContainer = "container:SinaNews.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CEA7B643176B148600DB68D7"
-            BuildableName = "SinaNews.app"
+            BuildableName = "&#26032;&#28010;&#26032;&#38395;.app"
             BlueprintName = "SinaNews"
             ReferencedContainer = "container:SinaNews.xcodeproj">
          </BuildableReference>

@@ -9,11 +9,19 @@
 #import "colyAppDelegate.h"
 
 @implementation colyAppDelegate
+@synthesize newsController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+  
+    //引入新闻控制器
+    self.newsController = [[NewsViewController alloc] initWithNibName:@"NewsViewController" bundle:nil];
+  
+//    self.window.rootViewController = self.newsController;
+    [self.window addSubview:self.newsController.view];
+  
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
