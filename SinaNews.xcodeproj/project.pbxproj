@@ -373,6 +373,7 @@
 		CEA7B924176B14B900DB68D7 /* zhong_dayu_navigation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEA7B7C4176B14B900DB68D7 /* zhong_dayu_navigation@2x.png */; };
 		CEC83366176EECAE00FCB190 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC83365176EECAE00FCB190 /* icon.png */; };
 		CEC83368176EECBD00FCB190 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC83367176EECBD00FCB190 /* icon@2x.png */; };
+		CEC9A9F017702916004EBBBA /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC9A9EF17702916004EBBBA /* NewsCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -748,6 +749,8 @@
 		CEA7B7C4176B14B900DB68D7 /* zhong_dayu_navigation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhong_dayu_navigation@2x.png"; sourceTree = "<group>"; };
 		CEC83365176EECAE00FCB190 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		CEC83367176EECBD00FCB190 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		CEC9A9EE17702916004EBBBA /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
+		CEC9A9EF17702916004EBBBA /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -825,6 +828,8 @@
 		CE7DE28A176EF1E500996FD6 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				CEC9A9EE17702916004EBBBA /* NewsCell.h */,
+				CEC9A9EF17702916004EBBBA /* NewsCell.m */,
 			);
 			name = News;
 			sourceTree = "<group>";
@@ -1671,6 +1676,7 @@
 				CEA7B658176B148600DB68D7 /* colyAppDelegate.m in Sources */,
 				CE7DE28E176EF27500996FD6 /* NewsViewController.m in Sources */,
 				CE7DE293176EF9C200996FD6 /* NewsTableViewController.m in Sources */,
+				CEC9A9F017702916004EBBBA /* NewsCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

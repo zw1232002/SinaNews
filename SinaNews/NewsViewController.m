@@ -22,12 +22,7 @@
     if (self) {
         // Custom initialization
       self.newsList = [[NewsTableViewController alloc] initWithStyle:UITableViewStylePlain];
-      self.NewsNavigation = [[UINavigationController alloc] init];
-      self.NewsNavigation.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
-//      [self.NewsNavigation.view addSubview:self.newsList.view];
-      
-      self.navigationController.title = @"ddfd";
-//      [self.NewsNavigationController.view addSubview:self.newsList.view];
+      self.NewsNavigation = [[UINavigationController alloc] initWithRootViewController:self.newsList];
       [self.view addSubview:self.NewsNavigation.view];
       
     }

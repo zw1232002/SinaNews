@@ -7,6 +7,8 @@
 //
 
 #import "NewsTableViewController.h"
+#import "NewsCell.h"
+
 
 @interface NewsTableViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -30,6 +32,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  
+    self.title = @"头条";
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -54,15 +58,20 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [self.newsListTable dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *NewsCellIdentifier = @"NewsCellIdentifier";
+    NewsCell *cell = [self.newsListTable dequeueReusableCellWithIdentifier:NewsCellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[NewsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NewsCellIdentifier];
     }
-    cell.textLabel.text = @"d我得到";
+  
     // Configure the cell...
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  return 75;
 }
 
 /*
