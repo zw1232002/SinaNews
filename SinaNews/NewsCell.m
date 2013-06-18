@@ -30,10 +30,14 @@
       
       //新闻标题
       self.newsTitle = [UILabel new];
-      self.newsTitle.frame = CGRectMake(82, 12, 240, 19);
-      self.newsTitle.text = @"同志们神十明晚过境肉眼可观测啦啦啦";
-      self.newsTitle.text = [self.newsTitle.text substringToIndex:12];
-      self.newsTitle.font = [UIFont fontWithName:@"Helvetica-Bold" size:19];
+      self.newsTitle.frame = CGRectMake(82, 12, 239, 19);
+      self.newsTitle.text = @"同志们神十明晚过境肉眼可察察到";
+      self.newsTitle.textColor = [UIColor colorWithRed:34.0f/255.0f green:34.0f/255.0f  blue:34.0f/255.0f  alpha:1.0f];
+//      [UIColor colorWithRed:<#(CGFloat)#> green:<#(CGFloat)#> blue:<#(CGFloat)#> alpha:<#(CGFloat)#>]
+      self.newsTitle.lineBreakMode = UILineBreakModeTailTruncation;
+      self.newsTitle.lineBreakMode = NSLineBreakByTruncatingTail;
+//      self.newsTitle.text = [self.newsTitle.text substringToIndex:14];
+      self.newsTitle.font = [UIFont fontWithName:@"Helvetica-Bold" size:16];
       [self.contentView addSubview:self.newsTitle];
       
       //新闻简介
@@ -41,7 +45,7 @@
       self.newsAbstract.frame = CGRectMake(82, 34, 225, 35);
       self.newsAbstract.numberOfLines = 0;
       self.newsAbstract.text = @"北京天文馆朱金表示，神十将在明晚7时左右过境北京，天文爱好者可以观看。";
-      self.newsAbstract.font = [UIFont fontWithName:@"Arial" size:13];
+      self.newsAbstract.font = [UIFont fontWithName:@"Arial" size:12];
       self.newsAbstract.textColor = [UIColor grayColor];
       self.newsAbstract.text = [self.newsAbstract.text substringToIndex:26];
       self.newsAbstract.text = [NSString stringWithFormat:@"%@ .....",self.newsAbstract.text];
@@ -49,8 +53,8 @@
       
       //发表时间
       self.newsPublishDate = [UILabel new];
-      self.newsPublishDate.frame = CGRectMake(250, 55, 120, 14);
-      self.newsPublishDate.font = [UIFont fontWithName:@"Arial" size:11];
+      self.newsPublishDate.frame = CGRectMake(250, 53, 120, 14);
+      self.newsPublishDate.font = [UIFont fontWithName:@"Arial" size:10];
       self.newsPublishDate.textColor = [UIColor grayColor];
       NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
       [dateFormatter setDateFormat:@"MM-dd HH:mm"];
