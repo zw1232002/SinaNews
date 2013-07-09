@@ -374,6 +374,8 @@
 		CEC83366176EECAE00FCB190 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC83365176EECAE00FCB190 /* icon.png */; };
 		CEC83368176EECBD00FCB190 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC83367176EECBD00FCB190 /* icon@2x.png */; };
 		CEC9A9F017702916004EBBBA /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC9A9EF17702916004EBBBA /* NewsCell.m */; };
+		E366955F178C52A0007A1B74 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E366955D178C52A0007A1B74 /* MainViewController.m */; };
+		E3669560178C52A0007A1B74 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E366955E178C52A0007A1B74 /* MainViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -751,6 +753,9 @@
 		CEC83367176EECBD00FCB190 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		CEC9A9EE17702916004EBBBA /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
 		CEC9A9EF17702916004EBBBA /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
+		E366955C178C52A0007A1B74 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		E366955D178C52A0007A1B74 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		E366955E178C52A0007A1B74 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -814,6 +819,9 @@
 				CE7DE28D176EF27500996FD6 /* NewsViewController.xib */,
 				CE7DE290176EF9C200996FD6 /* NewsTableViewController.h */,
 				CE7DE291176EF9C200996FD6 /* NewsTableViewController.m */,
+				E366955C178C52A0007A1B74 /* MainViewController.h */,
+				E366955D178C52A0007A1B74 /* MainViewController.m */,
+				E366955E178C52A0007A1B74 /* MainViewController.xib */,
 			);
 			name = News;
 			sourceTree = "<group>";
@@ -1662,6 +1670,7 @@
 				CEC83366176EECAE00FCB190 /* icon.png in Resources */,
 				CEC83368176EECBD00FCB190 /* icon@2x.png in Resources */,
 				CE7DE28F176EF27500996FD6 /* NewsViewController.xib in Resources */,
+				E3669560178C52A0007A1B74 /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1677,6 +1686,7 @@
 				CE7DE28E176EF27500996FD6 /* NewsViewController.m in Sources */,
 				CE7DE293176EF9C200996FD6 /* NewsTableViewController.m in Sources */,
 				CEC9A9F017702916004EBBBA /* NewsCell.m in Sources */,
+				E366955F178C52A0007A1B74 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

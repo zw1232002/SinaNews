@@ -21,6 +21,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+      [self.view setBackgroundColor:[UIColor clearColor]];
       self.newsList = [[NewsTableViewController alloc] initWithStyle:UITableViewStylePlain];
       self.NewsNavigation = [[UINavigationController alloc] initWithRootViewController:self.newsList];
       [self.view addSubview:self.NewsNavigation.view];

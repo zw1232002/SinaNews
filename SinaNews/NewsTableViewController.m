@@ -25,6 +25,7 @@
       self.newsListTable = [[UITableView alloc] initWithFrame:self.view.bounds];
       self.newsListTable.delegate = self;
       self.newsListTable.dataSource = self;
+     [self.view setBackgroundColor:[UIColor clearColor]];
     }
     return self;
 }

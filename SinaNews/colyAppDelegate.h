@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NewsViewController.h"
+#import "MainViewController.h"
 
 @interface colyAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 //新闻视图控制器
-@property (retain, nonatomic) NewsViewController *newsController;
-
+@property (retain, nonatomic) MainViewController *mainViewController;
 @end

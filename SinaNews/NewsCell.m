@@ -16,11 +16,9 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
       // Initialization code
-//      self.bounds.size = CGSizeMake(308, 76);
-      
-//      [self setBounds:CGRectMake(0, 0, 200, 50)];
-      [self setBackgroundColor:[UIColor clearColor]];
-      
+      //设置背景
+//      [self setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"cell_bg@2x.png"]]];
+      [self setBackgroundColor:[UIColor whiteColor]];
       
       //缩略图
       self.newsThumb = [UIImageView new];
