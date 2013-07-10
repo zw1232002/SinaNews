@@ -23,7 +23,11 @@
         // Custom initialization
       [self.view setBackgroundColor:[UIColor clearColor]];
       self.newsList = [[NewsTableViewController alloc] initWithStyle:UITableViewStylePlain];
+      
       self.NewsNavigation = [[UINavigationController alloc] initWithRootViewController:self.newsList];
+      
+//      [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"banner_back.png"] forBarMetrics:UIBarMetricsDefault];
+      
       [self.view addSubview:self.NewsNavigation.view];
       
     }

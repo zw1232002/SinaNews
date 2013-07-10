@@ -22,9 +22,19 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
-      self.newsListTable = [[UITableView alloc] initWithFrame:self.view.bounds];
+      
+      
+      self.newsListTable = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+      
+      self.tableView = self.newsListTable;
+      
       self.newsListTable.delegate = self;
       self.newsListTable.dataSource = self;
+      
+      //去除分割线
+      self.newsListTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+      
+      
      [self.view setBackgroundColor:[UIColor clearColor]];
     }
     return self;
@@ -32,15 +42,12 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+  [super viewDidLoad];
   
-    self.title = @"头条";
+  self.title = @"头条";
+  
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,6 +72,7 @@
         cell = [[NewsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NewsCellIdentifier];
     }
   
+
     // Configure the cell...
     
     return cell;
@@ -72,7 +80,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  return 75;
+  return 88;
 }
 
 /*
