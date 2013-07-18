@@ -14,4 +14,7 @@
 //新闻列表table
 @property (retain, nonatomic) PullTableView *newsListTable;
 
+//保存新闻实体类的数组
+@property (strong, nonatomic) NSMutableArray *newsListArray;
+
 @end

@@ -14,18 +14,25 @@
 
 @interface NewsTableViewController ()<UITableViewDataSource, UITableViewDelegate, PullTableViewDelegate>
 
+//当前页数
 @property (assign, nonatomic) int page;
+
+//总记录数
+@property (assign,nonatomic) int count;
+
 
 @end
 
 @implementation NewsTableViewController
-@synthesize newsListTable;
+@synthesize newsListTable,newsListArray,page,count;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+      
+      
       
       self.newsListTable = [[PullTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
       
@@ -49,10 +56,11 @@
   
   self.title = @"头条";
   
+  self.newsListArray = [NSMutableArray new];
+  
   self.newsListTable.pullArrowImage = [UIImage imageNamed:@"blackArrow"];
   self.newsListTable.pullBackgroundColor = [UIColor clearColor];
   self.newsListTable.pullTextColor = [UIColor blackColor];
-
 
 }
 
@@ -69,7 +77,7 @@
 
 - (void)getResult
 {
-  NSURL *requestUrl = [NSURL URLWithString:guoneiURL(1, 10)];
+  NSURL *requestUrl = [NSURL URLWithString:@"http://qingbin.sinaapp.com/api/lists?ntype=%E5%9B%BE%E7%89%87&pageNo=1&pagePer=10&list.htm"];
   
   NSURLRequest *request = [NSURLRequest requestWithURL:requestUrl];
   
@@ -78,7 +86,17 @@
   AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSURLResponse *response, id JSON)
   {
     
+    if (JSON)
+    {
+      self.count = [[JSON objectForKey:@"count"] intValue];
+      [self setData:[JSON objectForKey:@"item"]];
+
+    }
+    
+    self.page++;
+    
     [self.newsListTable reloadData];
+    
                                          
   } failure:^(NSURLRequest *request, NSURLResponse *response, NSError *error, id jj)
   {
@@ -89,6 +107,15 @@
   
 }
 
+
+- (void)setData:(NSDictionary *)data
+{
+  for (NSDictionary *dict in data) {
+    newsObject *news = [[newsObject alloc] initWithDictionary:dict];
+    [self.newsListArray addObject:news];
+  }
+
+}
 
 
 - (void)didReceiveMemoryWarning
@@ -102,7 +129,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 10;
+    return [self.newsListArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -115,6 +142,19 @@
   
 
     // Configure the cell...
+  
+  NSInteger row = [indexPath row];
+  
+  newsObject *news = [self.newsListArray objectAtIndex:row];
+  
+  cell.newsTitle.text = news.title;
+  cell.newsPublishDate.text = news.addTime;
+  
+  if (news.thumb)
+  {
+    [cell.newsThumb setImageWithURL:[NSURL URLWithString:news.thumb] placeholderImage:[UIImage imageNamed:@"cell_photo_default_small.png"]];
+  }
+  
     
     return cell;
 }
@@ -132,6 +172,7 @@
  */
 - (void)refreshTable
 {
+  [self getResult];
   self.newsListTable.pullTableIsRefreshing = NO;
   self.newsListTable.pullLastRefreshDate = [NSDate date];
 }

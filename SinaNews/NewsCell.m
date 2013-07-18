@@ -47,7 +47,7 @@
       self.newsTitle.frame = CGRectMake(92, 14, 210, 45);
       self.newsTitle.numberOfLines = 0;
       self.newsTitle.text = @"北京天文馆朱金表示，神十将在明晚7时左右过境北京，天文爱好者可以观看";
-      self.newsTitle.textColor = [UIColor colorWithRed:34.0f/255.0f green:34.0f/255.0f  blue:34.0f/255.0f  alpha:1.0f];
+      self.newsTitle.textColor = [UIColor colorWithRed:80.0f/255.0f green:80.0f/255.0f  blue:80.0f/255.0f  alpha:1.0f];
       self.newsTitle.lineBreakMode = NSLineBreakByWordWrapping;
       self.newsTitle.text = [self.newsTitle.text substringToIndex:21];
       self.newsTitle.text = [NSString stringWithFormat:@"%@ .....",self.newsTitle.text];
@@ -69,11 +69,11 @@
       
       //发表时间
       self.newsPublishDate = [UILabel new];
-      self.newsPublishDate.frame = CGRectMake(245, 62, 120, 14);
+      self.newsPublishDate.frame = CGRectMake(205, 62, 120, 14);
       self.newsPublishDate.font = [UIFont fontWithName:@"Arial" size:10];
       self.newsPublishDate.textColor = [UIColor grayColor];
       NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-      [dateFormatter setDateFormat:@"MM-dd HH:mm"];
+      [dateFormatter setDateFormat:@"YY-MM-dd HH:mm"];
       self.newsPublishDate.text = [dateFormatter stringFromDate:[NSDate date]];
       self.newsPublishDate.backgroundColor = [UIColor clearColor];
       [self.contentView addSubview:self.newsPublishDate];

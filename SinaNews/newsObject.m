@@ -9,14 +9,15 @@
 #import "newsObject.h"
 
 @implementation newsObject
-@synthesize thumb,title,addTime;
+@synthesize id,thumb,title,addTime;
 
 
-- (newsObject *)initData:(NSDictionary *)news
+- (newsObject *)initWithDictionary:(NSDictionary *)news
 {
+  self.id = [[news objectForKey:@"id"] intValue];
   self.title = [news objectForKey:@"title"];
   self.thumb = [news objectForKey:@"thumb"];
-  self.addTime = [news objectForKey:@"addTime"];
+  self.addTime = [news objectForKey:@"addtime"];
   return self;
 }
 
