@@ -30,8 +30,8 @@
   [super viewDidLoad];
   // Do any additional setup after loading the view from its nib.
   
-  //设置背景
-  [self.view setBackgroundColor:[UIColor colorWithRed:236.0/255.0f green:238.0/255.0f blue:239.0/255.0f alpha:1.0f]];
+  
+  [self.view setBackgroundColor:[UIColor clearColor]];
   
   //引入新闻控制器
   self.newsController = [[NewsViewController alloc] initWithNibName:@"NewsViewController" bundle:nil];

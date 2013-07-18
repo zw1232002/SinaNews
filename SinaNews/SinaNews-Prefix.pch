@@ -16,3 +16,35 @@
 
 #define kDeviceWidth [UIScreen mainScreen].bounds.size.width
 #define kDeviceHeight [UIScreen mainScreen].bounds.size.height
+
+//国内
+#define guoneiURL(pageNo,pagePer) [NSString stringWithFormat:@"http://qingbin.sinaapp.com/api/lists?ntype=国内&pageNo=%d&pagePer=%d&list.htm",pageNo,pagePer]
+
+//国际
+#define guojiURL(pageNo,pagePer) [NSString stringWithFormat:@"http://qingbin.sinaapp.com/api/lists?ntype=国际&pageNo=%d&pagePer=%d&list.htm",pageNo,pagePer]
+
+//社会
+#define guoneiURL(pageNo,pagePer) [NSString stringWithFormat:@"http://qingbin.sinaapp.com/api/lists?ntype=社会&pageNo=%d&pagePer=%d&list.htm",pageNo,pagePer]
+
+//深度
+#define guoneiURL(pageNo,pagePer) [NSString stringWithFormat:@"http://qingbin.sinaapp.com/api/lists?ntype=深度&pageNo=%d&pagePer=%d&list.htm",pageNo,pagePer]
+
+//评论
+#define guoneiURL(pageNo,pagePer) [NSString stringWithFormat:@"http://qingbin.sinaapp.com/api/lists?ntype=评论&pageNo=%d&pagePer=%d&list.htm",pageNo,pagePer]
+
+//探索
+#define guoneiURL(pageNo,pagePer) [NSString stringWithFormat:@"http://qingbin.sinaapp.com/api/lists?ntype=探索&pageNo=%d&pagePer=%d&list.htm",pageNo,pagePer]
+
+//军事
+#define guoneiURL(pageNo,pagePer) [NSString stringWithFormat:@"http://qingbin.sinaapp.com/api/lists?ntype=军事&pageNo=%d&pagePer=%d&list.htm",pageNo,pagePer]
+
+//图片
+#define guoneiURL(pageNo,pagePer) [NSString stringWithFormat:@"http://qingbin.sinaapp.com/api/lists?ntype=图片&pageNo=%d&pagePer=%d&list.htm",pageNo,pagePer]
+
+
+#define newDetailURL(id) [NSString stringWithFormat:@"http://qingbin.sinaapp.com/api/html/%d.html",id]
+
+
+
+
+

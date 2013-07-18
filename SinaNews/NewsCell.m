@@ -25,10 +25,6 @@
     if (self) {
       // Initialization code
       
-//      CGRect cellFrame = self.frame;
-//      cellFrame.size.width -= 30;
-//      self.frame = cellFrame;
-      
       //设置背景
       self.backgroundColor = [UIColor clearColor];
 
@@ -48,31 +44,32 @@
       
       //新闻标题
       self.newsTitle = [UILabel new];
-      self.newsTitle.frame = CGRectMake(92, 14, 222, 19);
-      self.newsTitle.text = @"同志们神十明晚过境肉眼可察察到";
+      self.newsTitle.frame = CGRectMake(92, 14, 210, 45);
+      self.newsTitle.numberOfLines = 0;
+      self.newsTitle.text = @"北京天文馆朱金表示，神十将在明晚7时左右过境北京，天文爱好者可以观看";
       self.newsTitle.textColor = [UIColor colorWithRed:34.0f/255.0f green:34.0f/255.0f  blue:34.0f/255.0f  alpha:1.0f];
-      self.newsTitle.lineBreakMode = NSLineBreakByTruncatingTail;
-      //超过14个字符就截取
-      self.newsTitle.text = [self.newsTitle.text length] <= 12 ? self.newsTitle.text : [self.newsTitle.text substringToIndex:12];
+      self.newsTitle.lineBreakMode = NSLineBreakByWordWrapping;
+      self.newsTitle.text = [self.newsTitle.text substringToIndex:21];
+      self.newsTitle.text = [NSString stringWithFormat:@"%@ .....",self.newsTitle.text];
       self.newsTitle.font = [UIFont fontWithName:@"Helvetica-Bold" size:16];
       self.newsTitle.backgroundColor = [UIColor clearColor];
       [self.contentView addSubview:self.newsTitle];
       
       //新闻简介
-      self.newsAbstract = [UILabel new];
-      self.newsAbstract.frame = CGRectMake(92, 40, 210, 35);
-      self.newsAbstract.numberOfLines = 0;
-      self.newsAbstract.text = @"北京天文馆朱金表示，神十将在明晚7时左右过境北京，天文爱好者可以观看。";
-      self.newsAbstract.font = [UIFont fontWithName:@"Arial" size:12];
-      self.newsAbstract.textColor = [UIColor grayColor];
-      self.newsAbstract.text = [self.newsAbstract.text substringToIndex:21];
-      self.newsAbstract.text = [NSString stringWithFormat:@"%@ .....",self.newsAbstract.text];
-      self.newsAbstract.backgroundColor = [UIColor clearColor];
-      [self.contentView addSubview:self.newsAbstract];
+//      self.newsAbstract = [UILabel new];
+//      self.newsAbstract.frame = CGRectMake(92, 40, 210, 35);
+//      self.newsAbstract.numberOfLines = 0;
+//      self.newsAbstract.text = @"北京天文馆朱金表示，神十将在明晚7时左右过境北京，天文爱好者可以观看。";
+//      self.newsAbstract.font = [UIFont fontWithName:@"Arial" size:12];
+//      self.newsAbstract.textColor = [UIColor grayColor];
+//      self.newsAbstract.text = [self.newsAbstract.text substringToIndex:21];
+//      self.newsAbstract.text = [NSString stringWithFormat:@"%@ .....",self.newsAbstract.text];
+//      self.newsAbstract.backgroundColor = [UIColor clearColor];
+//      [self.contentView addSubview:self.newsAbstract];
       
       //发表时间
       self.newsPublishDate = [UILabel new];
-      self.newsPublishDate.frame = CGRectMake(236, 60, 120, 14);
+      self.newsPublishDate.frame = CGRectMake(245, 62, 120, 14);
       self.newsPublishDate.font = [UIFont fontWithName:@"Arial" size:10];
       self.newsPublishDate.textColor = [UIColor grayColor];
       NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];

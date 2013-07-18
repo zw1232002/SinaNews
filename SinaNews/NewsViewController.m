@@ -26,6 +26,8 @@
       
       self.NewsNavigation = [[UINavigationController alloc] initWithRootViewController:self.newsList];
       
+      
+      
 //      [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"banner_back.png"] forBarMetrics:UIBarMetricsDefault];
       
       [self.view addSubview:self.NewsNavigation.view];

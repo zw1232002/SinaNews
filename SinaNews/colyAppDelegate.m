@@ -20,7 +20,8 @@
     self.mainViewController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
     [self.window addSubview:self.mainViewController.view];
   
-    self.window.backgroundColor = [UIColor clearColor];
+    //设置背景
+    [self.window setBackgroundColor:[UIColor colorWithRed:236.0/255.0f green:238.0/255.0f blue:239.0/255.0f alpha:1.0f]];
     [self.window makeKeyAndVisible];
     return YES;
 }

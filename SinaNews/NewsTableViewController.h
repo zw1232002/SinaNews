@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PullTableView.h"
 
 @interface NewsTableViewController : UITableViewController
 
 //新闻列表table
-@property (retain, nonatomic) UITableView *newsListTable;
+@property (retain, nonatomic) PullTableView *newsListTable;
 
 @end

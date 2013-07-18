@@ -8,9 +8,13 @@
 
 #import "NewsTableViewController.h"
 #import "NewsCell.h"
+#import "AFJSONRequestOperation.h"
+#import "UIImageView+AFNetworking.h"
+#import "newsObject.h"
 
+@interface NewsTableViewController ()<UITableViewDataSource, UITableViewDelegate, PullTableViewDelegate>
 
-@interface NewsTableViewController ()<UITableViewDataSource, UITableViewDelegate>
+@property (assign, nonatomic) int page;
 
 @end
 
@@ -23,8 +27,7 @@
     if (self) {
         // Custom initialization
       
-      
-      self.newsListTable = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+      self.newsListTable = [[PullTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
       
       self.tableView = self.newsListTable;
       
@@ -46,9 +49,47 @@
   
   self.title = @"头条";
   
+  self.newsListTable.pullArrowImage = [UIImage imageNamed:@"blackArrow"];
+  self.newsListTable.pullBackgroundColor = [UIColor clearColor];
+  self.newsListTable.pullTextColor = [UIColor blackColor];
 
 
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+  [super viewWillAppear:animated];
+  self.page = 1;
+  if (self.newsListTable.pullTableIsRefreshing == NO)
+  {
+    self.newsListTable.pullTableIsRefreshing = YES;
+    [self performSelector:@selector(refreshTable) withObject:nil afterDelay:1.0f];
+  }
+}
+
+- (void)getResult
+{
+  NSURL *requestUrl = [NSURL URLWithString:guoneiURL(1, 10)];
+  
+  NSURLRequest *request = [NSURLRequest requestWithURL:requestUrl];
+  
+  [AFJSONRequestOperation addAcceptableContentTypes:[NSSet setWithObject:@"text/html"]];
+  
+  AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSURLResponse *response, id JSON)
+  {
+    
+    [self.newsListTable reloadData];
+                                         
+  } failure:^(NSURLRequest *request, NSURLResponse *response, NSError *error, id jj)
+  {
+    NSLog(@"\nThe http request error:%@",error);
+  }];
+  
+  [operation start];
+  
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -61,7 +102,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 4;
+    return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -83,6 +124,42 @@
   return 80;
 }
 
+#pragma mark  - pullRefreshTable methods
+
+/**
+ *  @brief 刷新数据表
+ *
+ */
+- (void)refreshTable
+{
+  self.newsListTable.pullTableIsRefreshing = NO;
+  self.newsListTable.pullLastRefreshDate = [NSDate date];
+}
+
+
+/**
+ *  @brief 载入更多
+ *
+ */
+- (void)loadMoreToTable
+{
+  self.newsListTable.pullTableIsLoadingMore = NO;
+}
+
+
+
+#pragma mark - pullRefreshTable Delegate
+
+- (void)pullTableViewDidTriggerRefresh:(PullTableView *)pullTableView
+{
+
+  [self performSelector:@selector(refreshTable) withObject:nil afterDelay:1.0f];
+}
+
+- (void)pullTableViewDidTriggerLoadMore:(PullTableView *)pullTableView
+{
+  [self performSelector:@selector(loadMoreToTable) withObject:nil afterDelay:1.0f];
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
