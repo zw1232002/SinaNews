@@ -11,6 +11,7 @@
 #import "AFJSONRequestOperation.h"
 #import "UIImageView+AFNetworking.h"
 #import "newsObject.h"
+#import "newsDetailControllerViewController.h"
 
 @interface NewsTableViewController ()<UITableViewDataSource, UITableViewDelegate, PullTableViewDelegate>
 
@@ -77,7 +78,10 @@
 
 - (void)getResult
 {
-  NSURL *requestUrl = [NSURL URLWithString:@"http://qingbin.sinaapp.com/api/lists?ntype=%E5%9B%BE%E7%89%87&pageNo=1&pagePer=10&list.htm"];
+  NSString *url = [NSString stringWithString:guojiURL(self.page, 10)];
+  NSString *encodeURL = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+  
+  NSURL *requestUrl = [NSURL URLWithString:encodeURL];
   
   NSURLRequest *request = [NSURLRequest requestWithURL:requestUrl];
   
@@ -93,7 +97,7 @@
 
     }
     
-    self.page++;
+    
     
     [self.newsListTable reloadData];
     
@@ -172,6 +176,7 @@
  */
 - (void)refreshTable
 {
+  self.page=1;
   [self getResult];
   self.newsListTable.pullTableIsRefreshing = NO;
   self.newsListTable.pullLastRefreshDate = [NSDate date];
@@ -184,6 +189,8 @@
  */
 - (void)loadMoreToTable
 {
+  [self getResult];
+  self.page++;
   self.newsListTable.pullTableIsLoadingMore = NO;
 }
 
@@ -201,56 +208,18 @@
 {
   [self performSelector:@selector(loadMoreToTable) withObject:nil afterDelay:1.0f];
 }
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+  NSUInteger row = [indexPath row];
+  newsObject *news = [self.newsListArray objectAtIndex:row];
+  int newsId = news.id;
+  newsDetailControllerViewController *newsDetail = [[newsDetailControllerViewController alloc] initWithNibName:@"newsDetailControllerViewController" bundle:nil];
+  [newsDetail loadWebViewFromNewsId:newsId];
+  [self.navigationController pushViewController:newsDetail animated:YES];
 }
 
 @end

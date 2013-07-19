@@ -397,6 +397,9 @@
 		CEEA0B801797D2AF0061C322 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEA0B761797D2AF0061C322 /* AFXMLRequestOperation.m */; };
 		CEEA0B811797D2AF0061C322 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEA0B781797D2AF0061C322 /* UIImageView+AFNetworking.m */; };
 		CEEA0B841797E3A20061C322 /* newsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEA0B831797E3A20061C322 /* newsObject.m */; };
+		CEF019091798D996009FD024 /* newsDetailWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF019081798D996009FD024 /* newsDetailWebView.m */; };
+		CEF0190D1798DF45009FD024 /* newsDetailControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF0190B1798DF45009FD024 /* newsDetailControllerViewController.m */; };
+		CEF0190E1798DF45009FD024 /* newsDetailControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF0190C1798DF45009FD024 /* newsDetailControllerViewController.xib */; };
 		E366955F178C52A0007A1B74 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E366955D178C52A0007A1B74 /* MainViewController.m */; };
 		E3669560178C52A0007A1B74 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E366955E178C52A0007A1B74 /* MainViewController.xib */; };
 /* End PBXBuildFile section */
@@ -814,6 +817,11 @@
 		CEEA0B781797D2AF0061C322 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		CEEA0B821797E3A20061C322 /* newsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newsObject.h; sourceTree = "<group>"; };
 		CEEA0B831797E3A20061C322 /* newsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newsObject.m; sourceTree = "<group>"; };
+		CEF019071798D996009FD024 /* newsDetailWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newsDetailWebView.h; sourceTree = "<group>"; };
+		CEF019081798D996009FD024 /* newsDetailWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newsDetailWebView.m; sourceTree = "<group>"; };
+		CEF0190A1798DF45009FD024 /* newsDetailControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newsDetailControllerViewController.h; sourceTree = "<group>"; };
+		CEF0190B1798DF45009FD024 /* newsDetailControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newsDetailControllerViewController.m; sourceTree = "<group>"; };
+		CEF0190C1798DF45009FD024 /* newsDetailControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = newsDetailControllerViewController.xib; sourceTree = "<group>"; };
 		E366955C178C52A0007A1B74 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		E366955D178C52A0007A1B74 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		E366955E178C52A0007A1B74 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -837,7 +845,17 @@
 		CE7DE27E176EEF5000996FD6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CE7DE288176EF1C400996FD6 /* News */,
+				CE7DE28B176EF27500996FD6 /* NewsViewController.h */,
+				CE7DE28C176EF27500996FD6 /* NewsViewController.m */,
+				CE7DE28D176EF27500996FD6 /* NewsViewController.xib */,
+				CE7DE290176EF9C200996FD6 /* NewsTableViewController.h */,
+				CE7DE291176EF9C200996FD6 /* NewsTableViewController.m */,
+				E366955C178C52A0007A1B74 /* MainViewController.h */,
+				E366955D178C52A0007A1B74 /* MainViewController.m */,
+				E366955E178C52A0007A1B74 /* MainViewController.xib */,
+				CEF0190A1798DF45009FD024 /* newsDetailControllerViewController.h */,
+				CEF0190B1798DF45009FD024 /* newsDetailControllerViewController.m */,
+				CEF0190C1798DF45009FD024 /* newsDetailControllerViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -845,7 +863,8 @@
 		CE7DE27F176EEF6900996FD6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CE7DE289176EF1D800996FD6 /* News */,
+				CEEA0B821797E3A20061C322 /* newsObject.h */,
+				CEEA0B831797E3A20061C322 /* newsObject.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -853,7 +872,10 @@
 		CE7DE280176EEF8300996FD6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CE7DE28A176EF1E500996FD6 /* News */,
+				CEF019071798D996009FD024 /* newsDetailWebView.h */,
+				CEF019081798D996009FD024 /* newsDetailWebView.m */,
+				CEC9A9EE17702916004EBBBA /* NewsCell.h */,
+				CEC9A9EF17702916004EBBBA /* NewsCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -873,39 +895,6 @@
 				CEA7B664176B14B800DB68D7 /* images */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		CE7DE288176EF1C400996FD6 /* News */ = {
-			isa = PBXGroup;
-			children = (
-				CE7DE28B176EF27500996FD6 /* NewsViewController.h */,
-				CE7DE28C176EF27500996FD6 /* NewsViewController.m */,
-				CE7DE28D176EF27500996FD6 /* NewsViewController.xib */,
-				CE7DE290176EF9C200996FD6 /* NewsTableViewController.h */,
-				CE7DE291176EF9C200996FD6 /* NewsTableViewController.m */,
-				E366955C178C52A0007A1B74 /* MainViewController.h */,
-				E366955D178C52A0007A1B74 /* MainViewController.m */,
-				E366955E178C52A0007A1B74 /* MainViewController.xib */,
-			);
-			name = News;
-			sourceTree = "<group>";
-		};
-		CE7DE289176EF1D800996FD6 /* News */ = {
-			isa = PBXGroup;
-			children = (
-				CEEA0B821797E3A20061C322 /* newsObject.h */,
-				CEEA0B831797E3A20061C322 /* newsObject.m */,
-			);
-			name = News;
-			sourceTree = "<group>";
-		};
-		CE7DE28A176EF1E500996FD6 /* News */ = {
-			isa = PBXGroup;
-			children = (
-				CEC9A9EE17702916004EBBBA /* NewsCell.h */,
-				CEC9A9EF17702916004EBBBA /* NewsCell.m */,
-			);
-			name = News;
 			sourceTree = "<group>";
 		};
 		CEA7B63B176B148600DB68D7 = {
@@ -1811,6 +1800,7 @@
 				CEEA0B5F1797B98E0061C322 /* grayArrow@2x.png in Resources */,
 				CEEA0B601797B98E0061C322 /* whiteArrow.png in Resources */,
 				CEEA0B611797B98E0061C322 /* whiteArrow@2x.png in Resources */,
+				CEF0190E1798DF45009FD024 /* newsDetailControllerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1841,6 +1831,8 @@
 				CEEA0B801797D2AF0061C322 /* AFXMLRequestOperation.m in Sources */,
 				CEEA0B811797D2AF0061C322 /* UIImageView+AFNetworking.m in Sources */,
 				CEEA0B841797E3A20061C322 /* newsObject.m in Sources */,
+				CEF019091798D996009FD024 /* newsDetailWebView.m in Sources */,
+				CEF0190D1798DF45009FD024 /* newsDetailControllerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1885,7 +1877,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos6.1;
 			};
 			name = Debug;
 		};
@@ -1909,7 +1901,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos6.1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
