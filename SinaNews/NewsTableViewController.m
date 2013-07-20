@@ -79,7 +79,9 @@
 
 - (void)getResult
 {
-  NSString *url = [NSString stringWithString:guojiURL(self.page, 10)];
+  NSString *url = [NSString stringWithString:guojiURL(self.page, perPageNewsCount)];
+  
+  //因为url中有中文，这里进行一下url转义
   NSString *encodeURL = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
   
   NSLog(@"\n%@",encodeURL);
@@ -88,6 +90,7 @@
   
   NSURLRequest *request = [NSURLRequest requestWithURL:requestUrl];
   
+  //添加接收的格式支持，不然html头的json会报错
   [AFJSONRequestOperation addAcceptableContentTypes:[NSSet setWithObject:@"text/html"]];
   
   AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSURLResponse *response, id JSON)
@@ -99,9 +102,6 @@
       [self setData:[JSON objectForKey:@"item"]];
 
     }
-    
-    [self.newsListTable reloadData];
-    
                                          
   } failure:^(NSURLRequest *request, NSURLResponse *response, NSError *error, id jj)
   {
@@ -119,6 +119,8 @@
     newsObject *news = [[newsObject alloc] initWithDictionary:dict];
     [self.newsListArray addObject:news];
   }
+  
+  [self.newsListTable reloadData];
 
 }
 
@@ -150,15 +152,20 @@
   
   NSInteger row = [indexPath row];
   
-  newsObject *news = [self.newsListArray objectAtIndex:row];
-  
-  cell.newsTitle.text = news.title;
-  cell.newsPublishDate.text = news.addTime;
-  
-  if (news.thumb)
+  //这里判断一下当前的news数组是不是已经加载进来了，如果不判断，会报错
+  if (row <= [self.newsListArray count])
   {
-    [cell.newsThumb setImageWithURL:[NSURL URLWithString:news.thumb] placeholderImage:[UIImage imageNamed:@"cell_photo_default_small.png"]];
+    newsObject *news = [self.newsListArray objectAtIndex:row];
+    
+    cell.newsTitle.text = news.title;
+    cell.newsPublishDate.text = news.addTime;
+    
+    if (news.thumb)
+    {
+      [cell.newsThumb setImageWithURL:[NSURL URLWithString:news.thumb] placeholderImage:[UIImage imageNamed:@"cell_photo_default_small.png"]];
+    }
   }
+
   
     
     return cell;
@@ -178,6 +185,7 @@
 - (void)refreshTable
 {
   self.page=1;
+  [self.newsListArray removeAllObjects];
   [self getResult];
   self.newsListTable.pullTableIsRefreshing = NO;
   self.newsListTable.pullLastRefreshDate = [NSDate date];
@@ -205,24 +213,9 @@
 
 - (void)pullTableViewDidTriggerLoadMore:(PullTableView *)pullTableView
 {
-  NSLog(@"注意；loadmore的委托方法被调用拉。。。");
   [self performSelector:@selector(loadMoreToTable) withObject:nil afterDelay:1.0f];
 }
 
-
-
-//滚动控件的委托方法
--(void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-  
-//  [self.newsListTable egoRefreshScrollViewDidScroll:scrollView];
-}
-
--(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
-//  [self performSelector:@selector(loadMoreToTable) withObject:nil afterDelay:1.0f];
-//  [_refreshTableView egoRefreshScrollViewDidEndDragging:scrollView];
-}
 
 
 #pragma mark - Table view delegate

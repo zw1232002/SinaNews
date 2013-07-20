@@ -17,6 +17,8 @@
 #define kDeviceWidth [UIScreen mainScreen].bounds.size.width
 #define kDeviceHeight [UIScreen mainScreen].bounds.size.height
 
+#define perPageNewsCount 10
+
 //国内
 #define guoneiURL(pageNo,pagePer) [NSString stringWithFormat:@"http://qingbin.sinaapp.com/api/lists?ntype=国内&pageNo=%d&pagePer=%d&list.htm",pageNo,pagePer]
 
