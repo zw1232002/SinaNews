@@ -20,6 +20,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+      self.title = @"新闻详细";
+      
       UILabel *loadingText = [UILabel new];
       loadingText.frame = CGRectMake(100, 40, self.view.bounds.size.width, self.view.bounds.size.height);
       loadingText.text = @"正在加载....";
@@ -29,8 +31,9 @@
     return self;
 }
 
-- (void)loadWebViewFromNewsId:(int)id
+- (void)loadWebViewFromNewsId:(int)id andSetViewTitle:(NSString *)title
 {
+  self.title = title;
   NSString *detailURL = [NSString stringWithString:newDetailURL(id)];
   newsDetailWebView *detaiView = [[newsDetailWebView alloc] initWithFrame:self.view.bounds];
   [detaiView loadHTMLFromString:detailURL];

@@ -11,5 +11,5 @@
 @interface newsDetailControllerViewController : UIViewController
 
 
-- (void)loadWebViewFromNewsId:(int)id;
+- (void)loadWebViewFromNewsId:(int)id andSetViewTitle:(NSString *)title;
 @end

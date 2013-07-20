@@ -268,6 +268,7 @@
 - (void)loadMoreTableFooterDidTriggerLoadMore:(LoadMoreTableFooterView *)view
 {
     pullTableIsLoadingMore = YES;
+  NSLog(@"我loadmore了");
     [pullDelegate pullTableViewDidTriggerLoadMore:self];
 }
 

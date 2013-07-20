@@ -13,6 +13,8 @@
 #import "newsObject.h"
 #import "newsDetailControllerViewController.h"
 
+@class PullTableView;
+
 @interface NewsTableViewController ()<UITableViewDataSource, UITableViewDelegate, PullTableViewDelegate>
 
 //当前页数
@@ -25,7 +27,7 @@
 @end
 
 @implementation NewsTableViewController
-@synthesize newsListTable,newsListArray,page,count;
+@synthesize newsListArray,page,count,newsListTable;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -33,17 +35,18 @@
     if (self) {
         // Custom initialization
       
-      
-      
       self.newsListTable = [[PullTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
       
       self.tableView = self.newsListTable;
+      
+      //竟然设置这个就行了，太坑了。。。。。
+      self.newsListTable.pullDelegate = self;
       
       self.newsListTable.delegate = self;
       self.newsListTable.dataSource = self;
       
       //去除分割线
-      self.newsListTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+      self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
       
       
      [self.view setBackgroundColor:[UIColor clearColor]];
@@ -58,17 +61,15 @@
   self.title = @"头条";
   
   self.newsListArray = [NSMutableArray new];
-  
-  self.newsListTable.pullArrowImage = [UIImage imageNamed:@"blackArrow"];
-  self.newsListTable.pullBackgroundColor = [UIColor clearColor];
-  self.newsListTable.pullTextColor = [UIColor blackColor];
 
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
   [super viewWillAppear:animated];
+  
   self.page = 1;
+  
   if (self.newsListTable.pullTableIsRefreshing == NO)
   {
     self.newsListTable.pullTableIsRefreshing = YES;
@@ -80,6 +81,8 @@
 {
   NSString *url = [NSString stringWithString:guojiURL(self.page, 10)];
   NSString *encodeURL = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+  
+  NSLog(@"\n%@",encodeURL);
   
   NSURL *requestUrl = [NSURL URLWithString:encodeURL];
   
@@ -96,8 +99,6 @@
       [self setData:[JSON objectForKey:@"item"]];
 
     }
-    
-    
     
     [self.newsListTable reloadData];
     
@@ -189,24 +190,38 @@
  */
 - (void)loadMoreToTable
 {
-  [self getResult];
   self.page++;
+  [self getResult];
   self.newsListTable.pullTableIsLoadingMore = NO;
 }
 
 
-
-#pragma mark - pullRefreshTable Delegate
+#pragma mark - PullTableViewDelegate
 
 - (void)pullTableViewDidTriggerRefresh:(PullTableView *)pullTableView
 {
-
   [self performSelector:@selector(refreshTable) withObject:nil afterDelay:1.0f];
 }
 
 - (void)pullTableViewDidTriggerLoadMore:(PullTableView *)pullTableView
 {
+  NSLog(@"注意；loadmore的委托方法被调用拉。。。");
   [self performSelector:@selector(loadMoreToTable) withObject:nil afterDelay:1.0f];
+}
+
+
+
+//滚动控件的委托方法
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+  
+//  [self.newsListTable egoRefreshScrollViewDidScroll:scrollView];
+}
+
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+//  [self performSelector:@selector(loadMoreToTable) withObject:nil afterDelay:1.0f];
+//  [_refreshTableView egoRefreshScrollViewDidEndDragging:scrollView];
 }
 
 
@@ -218,7 +233,7 @@
   newsObject *news = [self.newsListArray objectAtIndex:row];
   int newsId = news.id;
   newsDetailControllerViewController *newsDetail = [[newsDetailControllerViewController alloc] initWithNibName:@"newsDetailControllerViewController" bundle:nil];
-  [newsDetail loadWebViewFromNewsId:newsId];
+  [newsDetail loadWebViewFromNewsId:newsId andSetViewTitle:news.title];
   [self.navigationController pushViewController:newsDetail animated:YES];
 }
 
