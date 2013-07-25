@@ -36,7 +36,7 @@
 
 - (void)loadWebViewFromNewsId:(int)id andSetViewTitle:(NSString *)title
 {
-  self.title = title;
+//  self.title = title;
   NSString *detailURL = [NSString stringWithString:newDetailURL(id)];
   newsDetailWebView *detaiView = [[newsDetailWebView alloc] initWithFrame:self.view.bounds];
   [detaiView loadHTMLFromString:detailURL];

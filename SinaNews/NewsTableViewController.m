@@ -23,6 +23,8 @@
 //总记录数
 @property (assign,nonatomic) int count;
 
+@property (assign,nonatomic) Boolean isFirst;
+
 
 @end
 
@@ -48,6 +50,7 @@
       //去除分割线
       self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
       
+      self.isFirst = YES;
       
      [self.view setBackgroundColor:[UIColor clearColor]];
     }
@@ -68,18 +71,23 @@
 {
   [super viewWillAppear:animated];
   
-  self.page = 1;
-  
-  if (self.newsListTable.pullTableIsRefreshing == NO)
+  if (self.isFirst == YES)
   {
-    self.newsListTable.pullTableIsRefreshing = YES;
-    [self performSelector:@selector(refreshTable) withObject:nil afterDelay:1.0f];
+    self.page = 1;
+    
+    if (self.newsListTable.pullTableIsRefreshing == NO)
+    {
+      self.newsListTable.pullTableIsRefreshing = YES;
+      [self performSelector:@selector(refreshTable) withObject:nil afterDelay:1.0f];
+    }
+    self.isFirst = NO;
   }
+  
 }
 
 - (void)getResult
 {
-  NSString *url = [NSString stringWithString:guojiURL(self.page, perPageNewsCount)];
+  NSString *url = [NSString stringWithString:tupianURL(self.page, perPageNewsCount)];
   
   //因为url中有中文，这里进行一下url转义
   NSString *encodeURL = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
