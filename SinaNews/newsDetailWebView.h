@@ -13,4 +13,5 @@
 //加载网页
 - (void)loadHTMLFromString:(NSString *)stringURL;
 
+-(void)loadDocument:(NSString *)docName;
 @end

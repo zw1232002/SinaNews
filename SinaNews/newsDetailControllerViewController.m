@@ -9,7 +9,10 @@
 #import "newsDetailControllerViewController.h"
 #import "newsDetailWebView.h"
 
-@interface newsDetailControllerViewController ()
+@interface newsDetailControllerViewController ()< UIWebViewDelegate>
+
+@property (strong, nonatomic) UIView *loadingView;
+@property (strong, nonatomic) UIActivityIndicatorView *activeView;
 
 @end
 
@@ -22,10 +25,10 @@
         // Custom initialization
       self.title = @"新闻详细";
       
-      UILabel *loadingText = [UILabel new];
-      loadingText.frame = CGRectMake(100, 40, self.view.bounds.size.width, self.view.bounds.size.height);
-      loadingText.text = @"正在加载....";
-      [self.view addSubview:loadingText];
+//      UILabel *loadingText = [UILabel new];
+//      loadingText.frame = CGRectMake(100, 40, self.view.bounds.size.width, self.view.bounds.size.height);
+//      loadingText.text = @"正在加载....";
+//      [self.view addSubview:loadingText];
 
     }
     return self;
@@ -38,6 +41,29 @@
   newsDetailWebView *detaiView = [[newsDetailWebView alloc] initWithFrame:self.view.bounds];
   [detaiView loadHTMLFromString:detailURL];
   [self.view addSubview:detaiView];
+}
+
+//当网页正在加载时，显示正在载入
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+  self.loadingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+  [self.view addSubview:self.loadingView];
+  
+  self.activeView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 32.0f, 32.0f)];
+  [self.activeView setCenter:self.loadingView.center];
+  [self.activeView setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
+  [self.loadingView addSubview:self.activeView];
+  
+  [self.activeView startAnimating];
+  NSLog(@"\nwebview start loading");
+  
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+  [self.activeView stopAnimating];
+  [self.loadingView removeFromSuperview];
+  NSLog(@"\nwebview finish loading");
 }
 
 - (void)viewDidLoad

@@ -23,7 +23,7 @@
 
 - (void)loadHTMLFromString:(NSString *)stringURL
 {
-  [self loadDocument:@"test.css"];
+//  [self loadDocument:@"test.css"];
   NSURL *url = [NSURL URLWithString:stringURL];
   NSURLRequest *request = [NSURLRequest requestWithURL:url];
   [self loadRequest:request];
