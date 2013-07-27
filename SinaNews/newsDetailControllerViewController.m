@@ -24,11 +24,6 @@
     if (self) {
         // Custom initialization
       self.title = @"新闻详细";
-      
-//      UILabel *loadingText = [UILabel new];
-//      loadingText.frame = CGRectMake(100, 40, self.view.bounds.size.width, self.view.bounds.size.height);
-//      loadingText.text = @"正在加载....";
-//      [self.view addSubview:loadingText];
 
     }
     return self;
@@ -39,6 +34,9 @@
 //  self.title = title;
   NSString *detailURL = [NSString stringWithString:newDetailURL(id)];
   newsDetailWebView *detaiView = [[newsDetailWebView alloc] initWithFrame:self.view.bounds];
+  
+  //设置这个很重要，不然uiwebview没法接收
+  [detaiView setDelegate:self];
   [detaiView loadHTMLFromString:detailURL];
   [self.view addSubview:detaiView];
 }
@@ -46,24 +44,36 @@
 //当网页正在加载时，显示正在载入
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-  self.loadingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+//  NSLog(@"\nwebview start loading");
+  self.loadingView = [[UIView alloc] initWithFrame:CGRectMake(-20, 0, 340, 480)];
   [self.view addSubview:self.loadingView];
+  
+  UILabel *loadingText = [UILabel new];
+  loadingText.text = @"载入中...";
+  loadingText.frame = CGRectMake((kDeviceWidth-80)/2 + 48, (kDeviceHeight -30)/2, 80, 30);
+  [loadingText setBackgroundColor:[UIColor clearColor]];
+  [self.loadingView addSubview:loadingText];
   
   self.activeView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 32.0f, 32.0f)];
   [self.activeView setCenter:self.loadingView.center];
   [self.activeView setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
   [self.loadingView addSubview:self.activeView];
   
+
   [self.activeView startAnimating];
-  NSLog(@"\nwebview start loading");
-  
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
+//  NSLog(@"\nwebview finish loading");
   [self.activeView stopAnimating];
   [self.loadingView removeFromSuperview];
-  NSLog(@"\nwebview finish loading");
+  
+}
+
+- (void) webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+  NSLog(@"didFailLoadWithError:%@", error);
 }
 
 - (void)viewDidLoad

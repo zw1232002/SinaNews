@@ -23,6 +23,7 @@
 //总记录数
 @property (assign,nonatomic) int count;
 
+//用来判断是不是首次打开，
 @property (assign,nonatomic) Boolean isFirst;
 
 
@@ -71,6 +72,7 @@
 {
   [super viewWillAppear:animated];
   
+  //如果是首次打开就刷新，不然的话，每次载入视图都会刷新的
   if (self.isFirst == YES)
   {
     self.page = 1;
