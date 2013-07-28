@@ -400,7 +400,6 @@
 		CEF019091798D996009FD024 /* newsDetailWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF019081798D996009FD024 /* newsDetailWebView.m */; };
 		CEF0190D1798DF45009FD024 /* newsDetailControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF0190B1798DF45009FD024 /* newsDetailControllerViewController.m */; };
 		CEF0190E1798DF45009FD024 /* newsDetailControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF0190C1798DF45009FD024 /* newsDetailControllerViewController.xib */; };
-		E346EB7817A4389B00D5252F /* PullTableViewLan.strings in Resources */ = {isa = PBXBuildFile; fileRef = E346EB7A17A4389B00D5252F /* PullTableViewLan.strings */; };
 		E366955F178C52A0007A1B74 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E366955D178C52A0007A1B74 /* MainViewController.m */; };
 		E3669560178C52A0007A1B74 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E366955E178C52A0007A1B74 /* MainViewController.xib */; };
 		E373F1F1179AF20E00B510D0 /* test.css in Resources */ = {isa = PBXBuildFile; fileRef = E373F1F0179AF20E00B510D0 /* test.css */; };
@@ -824,8 +823,6 @@
 		CEF0190A1798DF45009FD024 /* newsDetailControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newsDetailControllerViewController.h; sourceTree = "<group>"; };
 		CEF0190B1798DF45009FD024 /* newsDetailControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newsDetailControllerViewController.m; sourceTree = "<group>"; };
 		CEF0190C1798DF45009FD024 /* newsDetailControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = newsDetailControllerViewController.xib; sourceTree = "<group>"; };
-		E346EB7917A4389B00D5252F /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/PullTableViewLan.strings; sourceTree = "<group>"; };
-		E346EB7B17A438FF00D5252F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hans"; path = "zh-Hans.lproj/PullTableViewLan.strings"; sourceTree = "<group>"; };
 		E366955C178C52A0007A1B74 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		E366955D178C52A0007A1B74 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		E366955E178C52A0007A1B74 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -936,7 +933,6 @@
 		CEA7B64D176B148600DB68D7 /* SinaNews */ = {
 			isa = PBXGroup;
 			children = (
-				E346EB7A17A4389B00D5252F /* PullTableViewLan.strings */,
 				CE7DE27E176EEF5000996FD6 /* Controllers */,
 				CE7DE27F176EEF6900996FD6 /* Models */,
 				CE7DE280176EEF8300996FD6 /* Views */,
@@ -1811,7 +1807,6 @@
 				CEEA0B611797B98E0061C322 /* whiteArrow@2x.png in Resources */,
 				CEF0190E1798DF45009FD024 /* newsDetailControllerViewController.xib in Resources */,
 				E373F1F1179AF20E00B510D0 /* test.css in Resources */,
-				E346EB7817A4389B00D5252F /* PullTableViewLan.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1872,16 +1867,6 @@
 				CEA7B651176B148600DB68D7 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		E346EB7A17A4389B00D5252F /* PullTableViewLan.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E346EB7917A4389B00D5252F /* en */,
-				E346EB7B17A438FF00D5252F /* zh-Hans */,
-			);
-			name = PullTableViewLan.strings;
-			path = EGOTableViewPullRefresh;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
