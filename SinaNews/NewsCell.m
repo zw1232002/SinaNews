@@ -47,7 +47,7 @@
       self.newsTitle.frame = CGRectMake(92, 14, 210, 45);
       self.newsTitle.numberOfLines = 0;
       self.newsTitle.text = @"北京天文馆朱金表示，神十将在明晚7时左右过境北京，天文爱好者可以观看";
-      self.newsTitle.textColor = [UIColor colorWithRed:80.0f/255.0f green:80.0f/255.0f  blue:80.0f/255.0f  alpha:1.0f];
+      self.newsTitle.textColor = lightGreyColor;
       self.newsTitle.lineBreakMode = NSLineBreakByWordWrapping;
       self.newsTitle.text = [self.newsTitle.text substringToIndex:21];
       self.newsTitle.text = [NSString stringWithFormat:@"%@ .....",self.newsTitle.text];

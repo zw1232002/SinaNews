@@ -23,7 +23,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-      self.title = @"新闻详细";
+//      self.title = @"新闻详细";
 
     }
     return self;
@@ -46,6 +46,7 @@
 {
 //  NSLog(@"\nwebview start loading");
   self.loadingView = [[UIView alloc] initWithFrame:CGRectMake(-20, 0, 340, 480)];
+  [self.loadingView setBackgroundColor:[UIColor whiteColor]];
   [self.view addSubview:self.loadingView];
   
   UILabel *loadingText = [UILabel new];

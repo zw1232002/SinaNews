@@ -40,6 +40,8 @@
       
       self.newsListTable = [[PullTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
       
+      self.newsListTable.pullBackgroundColor = [UIColor clearColor];
+      
       self.tableView = self.newsListTable;
       
       //竟然设置这个就行了，太坑了。。。。。
@@ -49,7 +51,7 @@
       self.newsListTable.dataSource = self;
       
       //去除分割线
-      self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+      self.newsListTable.separatorStyle = UITableViewCellSeparatorStyleNone;
       
       self.isFirst = YES;
       
@@ -62,10 +64,15 @@
 {
   [super viewDidLoad];
   
-  self.title = @"头条";
+//  self.title = @"头条";
+  
+//  [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"banner_back.png"] forBarMetrics:UIBarMetricsDefault];
+  
+  
+  self.navigationItem.titleView=[self getTtileViewWithTitle:@"头条"];
+
   
   self.newsListArray = [NSMutableArray new];
-
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -175,15 +182,31 @@
       [cell.newsThumb setImageWithURL:[NSURL URLWithString:news.thumb] placeholderImage:[UIImage imageNamed:@"cell_photo_default_small.png"]];
     }
   }
-
-  
-    
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   return 80;
+}
+
+
+- (UIView *)getTtileViewWithTitle:(NSString *)title
+{
+  UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0,0,320,44)];
+  [view setBackgroundColor:[UIColor clearColor]];
+  [view setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight ];
+  
+  UILabel *nameLabel = [[UILabel alloc] init];
+  [nameLabel setFrame:CGRectMake(0, 0, 320, 44)];
+  [nameLabel setBackgroundColor:[UIColor clearColor]];
+  [nameLabel setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin |UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin];
+  [nameLabel setTextColor:lightGreyColor];
+  [nameLabel setFont:[UIFont boldSystemFontOfSize:19]];
+  [nameLabel setTextAlignment:UITextAlignmentCenter];
+  [nameLabel setText:title];
+  [view addSubview:nameLabel];
+  return view;
 }
 
 #pragma mark  - pullRefreshTable methods

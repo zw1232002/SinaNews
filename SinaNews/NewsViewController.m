@@ -26,9 +26,18 @@
       
       self.NewsNavigation = [[UINavigationController alloc] initWithRootViewController:self.newsList];
       
+      UIImage *naviBarBackground = [UIImage imageNamed:@"toolbar_bg@2x"];
+      
+      UIImage *navSizeImage = [self compressImage:naviBarBackground bySpecifiedWidth:320 andHeight:44];
       
       
-//      [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"banner_back.png"] forBarMetrics:UIBarMetricsDefault];
+      
+//      self.NewsNavigation.navigationItem.titleView = [self getTtileViewWithTitle:@"头条"];
+      
+      //更改返回按钮的背景色
+//      self.NewsNavigation.navigationBar.tintColor = [UIColor grayColor];
+      
+      [self.NewsNavigation.navigationBar setBackgroundImage:navSizeImage forBarMetrics:UIBarMetricsDefault];
       
       [self.view addSubview:self.NewsNavigation.view];
       
@@ -47,5 +56,36 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+                                    
+- (UIImage *)compressImage:(UIImage *)imgSrc bySpecifiedWidth:(int)width andHeight:(int)height
+{
+        CGSize size = {width, height};
+        UIGraphicsBeginImageContext(size);
+        CGRect rect = {{0,0}, size};
+        [imgSrc drawInRect:rect];
+        UIImage *compressedImg = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        return compressedImg;
+}
+
+- (UIView *)getTtileViewWithTitle:(NSString *)title
+{
+  UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0,0,320,44)];
+  [view setBackgroundColor:[UIColor redColor]];
+//  [view setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight ];
+  
+  UILabel *nameLabel = [[UILabel alloc] init];
+  [nameLabel setFrame:CGRectMake(0, 0, 320, 44)];
+  [nameLabel setBackgroundColor:[UIColor redColor]];
+//  [nameLabel setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin |UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin];
+  [nameLabel setTextColor:[UIColor blackColor]];
+//  [nameLabel setFont:[UIFont boldSystemFontOfSize:17]];
+//  [nameLabel setTextAlignment:UITextAlignmentCenter];
+  [nameLabel setText:title];
+  [view addSubview:nameLabel];
+  return view;
+}
+
+
 
 @end
