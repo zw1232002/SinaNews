@@ -66,14 +66,12 @@
   
 //  self.title = @"头条";
   
-//  [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"banner_back.png"] forBarMetrics:UIBarMetricsDefault];
-  
-  
   self.navigationItem.titleView=[self getTtileViewWithTitle:@"头条"];
-
   
   self.newsListArray = [NSMutableArray new];
 }
+
+
 
 - (void)viewWillAppear:(BOOL)animated
 {

@@ -30,13 +30,6 @@
       
       UIImage *navSizeImage = [self compressImage:naviBarBackground bySpecifiedWidth:320 andHeight:44];
       
-      
-      
-//      self.NewsNavigation.navigationItem.titleView = [self getTtileViewWithTitle:@"头条"];
-      
-      //更改返回按钮的背景色
-//      self.NewsNavigation.navigationBar.tintColor = [UIColor grayColor];
-      
       [self.NewsNavigation.navigationBar setBackgroundImage:navSizeImage forBarMetrics:UIBarMetricsDefault];
       
       [self.view addSubview:self.NewsNavigation.view];

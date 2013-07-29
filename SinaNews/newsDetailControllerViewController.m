@@ -24,9 +24,26 @@
     if (self) {
         // Custom initialization
 //      self.title = @"新闻详细";
+      
+      UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+      
+      backButton.frame = CGRectMake(0, 0, 14, 20);
+      
+      [backButton setImage:[UIImage imageNamed:@"ic_back@2x.png"] forState:UIControlStateNormal];
+      
+      [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+      
+      UIBarButtonItem *navLeftBarItem = [[UIBarButtonItem alloc]initWithCustomView:backButton];
+      
+      self.navigationItem.leftBarButtonItem = navLeftBarItem;
 
     }
     return self;
+}
+
+- (void)back
+{
+  [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)loadWebViewFromNewsId:(int)id andSetViewTitle:(NSString *)title
