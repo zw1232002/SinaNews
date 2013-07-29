@@ -8,6 +8,7 @@
 
 #import "newsDetailControllerViewController.h"
 #import "newsDetailWebView.h"
+#import "Tools.h"
 
 @interface newsDetailControllerViewController ()< UIWebViewDelegate>
 
@@ -24,6 +25,8 @@
     if (self) {
         // Custom initialization
 //      self.title = @"新闻详细";
+      
+      self.navigationItem.titleView = [[Tools new]getTtileViewWithTitle:@"新闻详细"];
       
       UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
       
@@ -62,13 +65,13 @@
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
 //  NSLog(@"\nwebview start loading");
-  self.loadingView = [[UIView alloc] initWithFrame:CGRectMake(-20, 0, 340, 480)];
+  self.loadingView = [[UIView alloc] initWithFrame:CGRectMake(-20, -30, 340, 510)];
   [self.loadingView setBackgroundColor:[UIColor whiteColor]];
   [self.view addSubview:self.loadingView];
   
   UILabel *loadingText = [UILabel new];
   loadingText.text = @"载入中...";
-  loadingText.frame = CGRectMake((kDeviceWidth-80)/2 + 48, (kDeviceHeight -30)/2, 80, 30);
+  loadingText.frame = CGRectMake((kDeviceWidth-80)/2 + 48, (kDeviceHeight -30)/2-15, 80, 30);
   [loadingText setBackgroundColor:[UIColor clearColor]];
   [self.loadingView addSubview:loadingText];
   

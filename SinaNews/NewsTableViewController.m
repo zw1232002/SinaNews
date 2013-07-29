@@ -12,8 +12,10 @@
 #import "UIImageView+AFNetworking.h"
 #import "newsObject.h"
 #import "newsDetailControllerViewController.h"
+#import "Tools.h"
 
 @class PullTableView;
+
 
 @interface NewsTableViewController ()<UITableViewDataSource, UITableViewDelegate, PullTableViewDelegate>
 
@@ -66,7 +68,7 @@
   
 //  self.title = @"头条";
   
-  self.navigationItem.titleView=[self getTtileViewWithTitle:@"头条"];
+  self.navigationItem.titleView=[[Tools new] getTtileViewWithTitle:@"头条"];
   
   self.newsListArray = [NSMutableArray new];
 }
@@ -136,7 +138,16 @@
   }
   
   [self.newsListTable reloadData];
-
+  
+  //在数据表重新加载之后，再把loading状态设置NO
+  if (self.newsListTable.pullTableIsRefreshing == YES)
+  {
+    self.newsListTable.pullTableIsRefreshing = NO;
+    self.newsListTable.pullLastRefreshDate = [NSDate date];
+  }else if (self.newsListTable.pullTableIsLoadingMore == YES)//loadingmore 也是如此
+  {
+    self.newsListTable.pullTableIsLoadingMore = NO;
+  }
 }
 
 
@@ -189,23 +200,7 @@
 }
 
 
-- (UIView *)getTtileViewWithTitle:(NSString *)title
-{
-  UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0,0,320,44)];
-  [view setBackgroundColor:[UIColor clearColor]];
-  [view setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight ];
-  
-  UILabel *nameLabel = [[UILabel alloc] init];
-  [nameLabel setFrame:CGRectMake(0, 0, 320, 44)];
-  [nameLabel setBackgroundColor:[UIColor clearColor]];
-  [nameLabel setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin |UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin];
-  [nameLabel setTextColor:lightGreyColor];
-  [nameLabel setFont:[UIFont boldSystemFontOfSize:19]];
-  [nameLabel setTextAlignment:UITextAlignmentCenter];
-  [nameLabel setText:title];
-  [view addSubview:nameLabel];
-  return view;
-}
+
 
 #pragma mark  - pullRefreshTable methods
 
@@ -218,8 +213,7 @@
   self.page=1;
   [self.newsListArray removeAllObjects];
   [self getResult];
-  self.newsListTable.pullTableIsRefreshing = NO;
-  self.newsListTable.pullLastRefreshDate = [NSDate date];
+  
 }
 
 
@@ -231,7 +225,7 @@
 {
   self.page++;
   [self getResult];
-  self.newsListTable.pullTableIsLoadingMore = NO;
+  
 }
 
 
