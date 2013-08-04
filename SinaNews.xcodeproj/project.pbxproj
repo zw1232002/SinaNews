@@ -403,8 +403,6 @@
 		E30DD01217AD637900B5053F /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E30DD01117AD637900B5053F /* MBProgressHUD.m */; };
 		E30DD01717AD639100B5053F /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = E30DD01317AD639100B5053F /* 37x-Checkmark.png */; };
 		E30DD01817AD639100B5053F /* 37x-Checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E30DD01417AD639100B5053F /* 37x-Checkmark@2x.png */; };
-		E30DD01917AD639100B5053F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E30DD01517AD639100B5053F /* Icon.png */; };
-		E30DD01A17AD639100B5053F /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E30DD01617AD639100B5053F /* Icon@2x.png */; };
 		E366955F178C52A0007A1B74 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E366955D178C52A0007A1B74 /* MainViewController.m */; };
 		E3669560178C52A0007A1B74 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E366955E178C52A0007A1B74 /* MainViewController.xib */; };
 		E397F6DD17A6ABC200C54A51 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = E397F6DC17A6ABC200C54A51 /* Tools.m */; };
@@ -833,8 +831,6 @@
 		E30DD01117AD637900B5053F /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		E30DD01317AD639100B5053F /* 37x-Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark.png"; sourceTree = "<group>"; };
 		E30DD01417AD639100B5053F /* 37x-Checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark@2x.png"; sourceTree = "<group>"; };
-		E30DD01517AD639100B5053F /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		E30DD01617AD639100B5053F /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		E366955C178C52A0007A1B74 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		E366955D178C52A0007A1B74 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		E366955E178C52A0007A1B74 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -1406,8 +1402,6 @@
 			children = (
 				E30DD01317AD639100B5053F /* 37x-Checkmark.png */,
 				E30DD01417AD639100B5053F /* 37x-Checkmark@2x.png */,
-				E30DD01517AD639100B5053F /* Icon.png */,
-				E30DD01617AD639100B5053F /* Icon@2x.png */,
 				E30DD01017AD637900B5053F /* MBProgressHUD.h */,
 				E30DD01117AD637900B5053F /* MBProgressHUD.m */,
 			);
@@ -1849,8 +1843,6 @@
 				E397F6E117A6B1D200C54A51 /* PullTableViewLan.strings in Resources */,
 				E30DD01717AD639100B5053F /* 37x-Checkmark.png in Resources */,
 				E30DD01817AD639100B5053F /* 37x-Checkmark@2x.png in Resources */,
-				E30DD01917AD639100B5053F /* Icon.png in Resources */,
-				E30DD01A17AD639100B5053F /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
