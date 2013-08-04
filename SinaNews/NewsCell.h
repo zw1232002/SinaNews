@@ -16,8 +16,6 @@
 //新闻标题
 @property (retain, nonatomic) UILabel *newsTitle;
 
-//新闻简介
-@property (retain, nonatomic) UILabel *newsAbstract;
 
 //新闻发表时间
 @property (retain, nonatomic) UILabel *newsPublishDate;

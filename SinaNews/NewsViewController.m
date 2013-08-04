@@ -28,7 +28,7 @@
       
       UIImage *naviBarBackground = [UIImage imageNamed:@"toolbar_bg@2x"];
       
-      UIImage *navSizeImage = [self compressImage:naviBarBackground bySpecifiedWidth:320 andHeight:44];
+      UIImage *navSizeImage = [self compressImage:naviBarBackground bySpecifiedWidth:kDeviceWidth andHeight:44];
       
       [self.NewsNavigation.navigationBar setBackgroundImage:navSizeImage forBarMetrics:UIBarMetricsDefault];
       

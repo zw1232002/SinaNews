@@ -24,21 +24,22 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-//      self.title = @"新闻详细";
       
       self.navigationItem.titleView = [[Tools new]getTtileViewWithTitle:@"新闻详细"];
       
+      //开始自定义返回按钮
       UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
       
-      backButton.frame = CGRectMake(0, 0, 14, 20);
+      backButton.frame = CGRectMake(0, 0, 15, 22);
       
-      [backButton setImage:[UIImage imageNamed:@"ic_back@2x.png"] forState:UIControlStateNormal];
+      [backButton setBackgroundImage:[UIImage imageNamed:@"ic_back@2x.png"] forState:UIControlStateNormal];
       
       [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
       
       UIBarButtonItem *navLeftBarItem = [[UIBarButtonItem alloc]initWithCustomView:backButton];
       
       self.navigationItem.leftBarButtonItem = navLeftBarItem;
+      
 
     }
     return self;

@@ -7,6 +7,7 @@
 //
 
 #import "NewsCell.h"
+#import "MBProgressHUD.h"
 
 @interface NewsCell()
 
@@ -17,7 +18,7 @@
 
 
 @implementation NewsCell
-@synthesize newsThumb,newsTitle,newsAbstract,newsPublishDate;
+@synthesize newsThumb,newsTitle,newsPublishDate;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -26,19 +27,29 @@
       // Initialization code
       
       //设置背景
-      self.backgroundColor = [UIColor clearColor];
-
-//      self.contentView.backgroundColor = [UIColor whiteColor];
       
-      UIImage *centerImage = [UIImage imageNamed:@"bg_card@2x.png"];
+      UIImage *centerImage = [UIImage imageNamed:@"cell_bg@2x.png"];
+      //拉伸图片背景，原来如此
+      centerImage=[centerImage stretchableImageWithLeftCapWidth:15 topCapHeight:9];
+      
       self.centerImageView = [[UIImageView alloc] initWithImage:centerImage];
-      self.centerImageView.frame = CGRectMake(7, 0, 306, 88);
+      self.centerImageView.frame = CGRectMake(-5, 0, 330, 88);
       [self.contentView addSubview:self.centerImageView];
+      
+      
+//      UIImage *centerImage2 = [UIImage imageNamed:@"cell_bg_hl@2x.png"];
+//      //拉伸图片背景，原来如此
+//      centerImage2=[centerImage2 stretchableImageWithLeftCapWidth:15 topCapHeight:9];
+//      
+//      UIImageView *imageView2 = [[UIImageView alloc] initWithImage:centerImage2];
+//      imageView2.frame = CGRectMake(-5, 0, 330, 88);
+////      [self.contentView addSubview:self.centerImageView];
+//      self.selectedBackgroundView = imageView2;
       
       
       //缩略图
       self.newsThumb = [UIImageView new];
-      self.newsThumb.frame = CGRectMake(18 ,11, 65, 65);
+      self.newsThumb.frame = CGRectMake(13 ,11, 65, 65);
       self.newsThumb.image = [UIImage imageNamed:@"cell_photo_default_small.png"];
       [self.contentView addSubview:self.newsThumb];
       
@@ -55,17 +66,6 @@
       self.newsTitle.backgroundColor = [UIColor clearColor];
       [self.contentView addSubview:self.newsTitle];
       
-      //新闻简介
-//      self.newsAbstract = [UILabel new];
-//      self.newsAbstract.frame = CGRectMake(92, 40, 210, 35);
-//      self.newsAbstract.numberOfLines = 0;
-//      self.newsAbstract.text = @"北京天文馆朱金表示，神十将在明晚7时左右过境北京，天文爱好者可以观看。";
-//      self.newsAbstract.font = [UIFont fontWithName:@"Arial" size:12];
-//      self.newsAbstract.textColor = [UIColor grayColor];
-//      self.newsAbstract.text = [self.newsAbstract.text substringToIndex:21];
-//      self.newsAbstract.text = [NSString stringWithFormat:@"%@ .....",self.newsAbstract.text];
-//      self.newsAbstract.backgroundColor = [UIColor clearColor];
-//      [self.contentView addSubview:self.newsAbstract];
       
       //发表时间
       self.newsPublishDate = [UILabel new];
@@ -84,7 +84,6 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
   
-  
 //    [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
@@ -93,14 +92,15 @@
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
 {
-//    if (highlighted)
-//    {
-//      self.contentView.backgroundColor = [UIColor redColor];
-//
-//    }else
-//    {
-//      self.contentView.backgroundColor = [UIColor whiteColor];
-//    }
+    if (highlighted)
+    {
+      
+
+    }else
+    {
+      
+      
+    }
 }
 
 @end

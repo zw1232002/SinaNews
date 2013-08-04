@@ -59,6 +59,9 @@
       self.isFirst = YES;
       
      [self.view setBackgroundColor:[UIColor clearColor]];
+      
+      
+      
     }
     return self;
 }
@@ -143,14 +146,10 @@
   //在数据表重新加载之后，再把loading状态设置NO
   if (self.newsListTable.pullTableIsRefreshing == YES)
   {
-    self.newsListTable.pullTableIsRefreshing = NO;
     self.newsListTable.pullLastRefreshDate = [NSDate date];
-    self.newsListTable.pullTableIsLoadingMore = NO;
-  }else if (self.newsListTable.pullTableIsLoadingMore == YES)//loadingmore 也是如此
-  {
-    self.newsListTable.pullTableIsLoadingMore = NO;
-    self.newsListTable.pullTableIsRefreshing = NO;
   }
+  self.newsListTable.pullTableIsLoadingMore = NO;
+  self.newsListTable.pullTableIsRefreshing = NO;
 }
 
 
@@ -226,19 +225,19 @@
  */
 - (void)loadMoreToTable
 {
-  self.page++;
-  
-  NSLog(@"总纪录数：%d,计算出的总页数：%f,当前页：%d",self.count,ceil(self.count/perPageNewsCount),self.page);
+//  NSLog(@"总纪录数：%d,计算出的总页数：%f,当前页：%d",self.count,ceil(self.count/perPageNewsCount),self.page);
   //判断一下总页数，超出不再请求
   if (ceil(self.count/perPageNewsCount)< self.page)
   {
-    NSLog(@"下面没有数据了！");
+//    NSLog(@"下面没有数据了！");
+    [[Tools new] tipWithText:@"没有更多数据了！" andView:self.navigationController.view];
+    self.newsListTable.pullTableIsLoadingMore = NO;
+    self.newsListTable.pullTableIsRefreshing = NO;
   }else
   {
+    self.page++;
     [self getResult];
   }
-  
-  
 }
 
 

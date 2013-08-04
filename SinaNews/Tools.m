@@ -7,28 +7,36 @@
 //
 
 #import "Tools.h"
+#import "MBProgressHUD.h"
 
 @implementation Tools
 
 
 - (UIView *)getTtileViewWithTitle:(NSString *)title
 {
-  UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0,0,320,44)];
-  [view setBackgroundColor:[UIColor clearColor]];
-  [view setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight ];
-  
   UILabel *nameLabel = [[UILabel alloc] init];
-  [nameLabel setFrame:CGRectMake(0, 0, 320, 44)];
+  //这里注意了，不要把width设置成屏幕的宽度，这样会导致无法自适应居中
+  //随便设置一个值，系统都会自己居中的
+  [nameLabel setFrame:CGRectMake(0, 0, 220, 44)];
   [nameLabel setBackgroundColor:[UIColor clearColor]];
-  [nameLabel setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin |UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin];
   [nameLabel setTextColor:lightGreyColor];
   [nameLabel setFont:[UIFont boldSystemFontOfSize:19]];
-  [nameLabel setTextAlignment:UITextAlignmentCenter];
+  [nameLabel setTextAlignment:NSTextAlignmentCenter];
   [nameLabel setText:title];
-  [view addSubview:nameLabel];
-  return view;
+  return nameLabel;
 }
 
+
+- (void)tipWithText:(NSString *)text andView:(UIView *)view
+{
+  MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+  hud.mode = MBProgressHUDModeText;
+  hud.labelText = text;
+  hud.margin = 15.f;
+  hud.yOffset = 20.f;
+  hud.removeFromSuperViewOnHide = YES;
+  [hud hide:YES afterDelay:2];
+}
 
 
 @end
