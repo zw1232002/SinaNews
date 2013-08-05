@@ -25,37 +25,32 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
       // Initialization code
-      
+      //设置cell的长度和位置
+      [self setFrame:self.bounds];
       //设置背景
-      
       UIImage *centerImage = [UIImage imageNamed:@"cell_bg@2x.png"];
       //拉伸图片背景，原来如此
       centerImage=[centerImage stretchableImageWithLeftCapWidth:15 topCapHeight:9];
-      
       self.centerImageView = [[UIImageView alloc] initWithImage:centerImage];
-      self.centerImageView.frame = CGRectMake(-5, 0, 330, 88);
-      [self.contentView addSubview:self.centerImageView];
+      self.backgroundView = self.centerImageView;
       
-      
-//      UIImage *centerImage2 = [UIImage imageNamed:@"cell_bg_hl@2x.png"];
-//      //拉伸图片背景，原来如此
-//      centerImage2=[centerImage2 stretchableImageWithLeftCapWidth:15 topCapHeight:9];
-//      
-//      UIImageView *imageView2 = [[UIImageView alloc] initWithImage:centerImage2];
-//      imageView2.frame = CGRectMake(-5, 0, 330, 88);
-////      [self.contentView addSubview:self.centerImageView];
-//      self.selectedBackgroundView = imageView2;
+      //设置高亮状态
+      UIImage *centerImage2 = [UIImage imageNamed:@"cell_bg_hl@2x.png"];
+      //拉伸图片背景，原来如此
+      centerImage2=[centerImage2 stretchableImageWithLeftCapWidth:15 topCapHeight:9];
+      UIImageView *imageView2 = [[UIImageView alloc] initWithImage:centerImage2];
+      self.selectedBackgroundView = imageView2;
       
       
       //缩略图
       self.newsThumb = [UIImageView new];
-      self.newsThumb.frame = CGRectMake(13 ,11, 65, 65);
+      self.newsThumb.frame = CGRectMake(19 ,12, 72, 72);
       self.newsThumb.image = [UIImage imageNamed:@"cell_photo_default_small.png"];
       [self.contentView addSubview:self.newsThumb];
       
       //新闻标题
       self.newsTitle = [UILabel new];
-      self.newsTitle.frame = CGRectMake(92, 14, 210, 45);
+      self.newsTitle.frame = CGRectMake(101, 14, 210, 48);
       self.newsTitle.numberOfLines = 0;
       self.newsTitle.text = @"北京天文馆朱金表示，神十将在明晚7时左右过境北京，天文爱好者可以观看";
       self.newsTitle.textColor = lightGreyColor;
@@ -69,7 +64,7 @@
       
       //发表时间
       self.newsPublishDate = [UILabel new];
-      self.newsPublishDate.frame = CGRectMake(205, 62, 120, 14);
+      self.newsPublishDate.frame = CGRectMake(213, 70, 120, 14);
       self.newsPublishDate.font = [UIFont fontWithName:@"Arial" size:10];
       self.newsPublishDate.textColor = [UIColor grayColor];
       NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -84,9 +79,13 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
   
-//    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+  if (selected)
+  {
+    //看过之后，新闻标题变灰
+    self.newsTitle.textColor = [UIColor grayColor];
+  }
+  
+  [super setSelected:selected animated:animated];
 }
 
 
@@ -95,12 +94,20 @@
     if (highlighted)
     {
       
-
-    }else
-    {
-      
-      
     }
+  // 必须要设置这个，不然高亮背景显示不出来
+   [super setHighlighted:highlighted animated:animated];
+}
+
+/**
+ *  @brief 设置cell的frame
+ */
+- (void)setFrame:(CGRect)frame
+{
+  frame.origin.x -= 5;
+  frame.size.width +=10;
+  frame.size.height +=8;
+  [super setFrame:frame];
 }
 
 @end
