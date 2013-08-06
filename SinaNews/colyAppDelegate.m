@@ -13,19 +13,32 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  // Override point for customization after application launch.
   
-    //引入MainViewController
-    self.mainViewController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
-    [self.window addSubview:self.mainViewController.view];
+  //设置
+  self.mainViewController = [[JASidePanelController alloc] init];
   
-    application.statusBarStyle = UIStatusBarStyleBlackOpaque;
+  self.mainViewController.shouldDelegateAutorotateToVisiblePanel = NO;
   
-    //设置背景
-    [self.window setBackgroundColor:[UIColor colorWithRed:236.0/255.0f green:238.0/255.0f blue:239.0/255.0f alpha:1.0f]];
-    [self.window makeKeyAndVisible];
-    return YES;
+  //引入新闻分类控制器
+  self.mainViewController.leftPanel = [[NewsCategoryViewController alloc] initWithNibName:@"NewsCategoryViewController" bundle:nil];
+  
+  //引入新闻控制器
+  self.mainViewController.centerPanel = [[NewsViewController alloc] initWithNibName:@"NewsViewController" bundle:nil];
+  
+  //设置背景
+  self.mainViewController.centerPanel.view.backgroundColor = cccColor;
+  
+  self.window.rootViewController = self.mainViewController;
+  
+  
+  application.statusBarStyle = UIStatusBarStyleBlackOpaque;
+  
+  
+  
+  [self.window makeKeyAndVisible];
+  return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

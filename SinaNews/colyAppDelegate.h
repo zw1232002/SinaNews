@@ -7,12 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MainViewController.h"
+#import "NewsCategoryViewController.h"
+#import "NewsViewController.h"
+#import "JASidePanelController.h"
 
 @interface colyAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-//新闻视图控制器
-@property (retain, nonatomic) MainViewController *mainViewController;
+
+//所有视图的总控制器
+@property (retain, nonatomic) JASidePanelController *mainViewController;
+
+
 @end

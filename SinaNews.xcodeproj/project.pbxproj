@@ -403,10 +403,14 @@
 		E30DD01217AD637900B5053F /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E30DD01117AD637900B5053F /* MBProgressHUD.m */; };
 		E30DD01717AD639100B5053F /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = E30DD01317AD639100B5053F /* 37x-Checkmark.png */; };
 		E30DD01817AD639100B5053F /* 37x-Checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E30DD01417AD639100B5053F /* 37x-Checkmark@2x.png */; };
-		E366955F178C52A0007A1B74 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E366955D178C52A0007A1B74 /* MainViewController.m */; };
-		E3669560178C52A0007A1B74 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E366955E178C52A0007A1B74 /* MainViewController.xib */; };
 		E397F6DD17A6ABC200C54A51 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = E397F6DC17A6ABC200C54A51 /* Tools.m */; };
 		E397F6E117A6B1D200C54A51 /* PullTableViewLan.strings in Resources */ = {isa = PBXBuildFile; fileRef = E397F6E317A6B1D200C54A51 /* PullTableViewLan.strings */; };
+		E3D4A51A17B1406200DBF94F /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D4A51717B1406200DBF94F /* JASidePanelController.m */; };
+		E3D4A51B17B1406200DBF94F /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D4A51917B1406200DBF94F /* UIViewController+JASidePanel.m */; };
+		E3D4A52417B148DF00DBF94F /* NewsCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D4A52217B148DF00DBF94F /* NewsCategoryViewController.m */; };
+		E3D4A52517B148DF00DBF94F /* NewsCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3D4A52317B148DF00DBF94F /* NewsCategoryViewController.xib */; };
+		E3D4A52817B14FA000DBF94F /* feed_cell_bg_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3D4A52617B14FA000DBF94F /* feed_cell_bg_hl@2x.png */; };
+		E3D4A52917B14FA000DBF94F /* feed_cell_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3D4A52717B14FA000DBF94F /* feed_cell_bg@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -831,14 +835,20 @@
 		E30DD01117AD637900B5053F /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		E30DD01317AD639100B5053F /* 37x-Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark.png"; sourceTree = "<group>"; };
 		E30DD01417AD639100B5053F /* 37x-Checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark@2x.png"; sourceTree = "<group>"; };
-		E366955C178C52A0007A1B74 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		E366955D178C52A0007A1B74 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		E366955E178C52A0007A1B74 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		E397F6DB17A6ABC200C54A51 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
 		E397F6DC17A6ABC200C54A51 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		E397F6E017A6B1BD00C54A51 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		E397F6E217A6B1D200C54A51 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/PullTableViewLan.strings"; sourceTree = "<group>"; };
 		E397F6E417A6B1DC00C54A51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PullTableViewLan.strings; sourceTree = "<group>"; };
+		E3D4A51617B1406200DBF94F /* JASidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JASidePanelController.h; sourceTree = "<group>"; };
+		E3D4A51717B1406200DBF94F /* JASidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASidePanelController.m; sourceTree = "<group>"; };
+		E3D4A51817B1406200DBF94F /* UIViewController+JASidePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JASidePanel.h"; sourceTree = "<group>"; };
+		E3D4A51917B1406200DBF94F /* UIViewController+JASidePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JASidePanel.m"; sourceTree = "<group>"; };
+		E3D4A52117B148DF00DBF94F /* NewsCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCategoryViewController.h; sourceTree = "<group>"; };
+		E3D4A52217B148DF00DBF94F /* NewsCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCategoryViewController.m; sourceTree = "<group>"; };
+		E3D4A52317B148DF00DBF94F /* NewsCategoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsCategoryViewController.xib; sourceTree = "<group>"; };
+		E3D4A52617B14FA000DBF94F /* feed_cell_bg_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "feed_cell_bg_hl@2x.png"; sourceTree = "<group>"; };
+		E3D4A52717B14FA000DBF94F /* feed_cell_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "feed_cell_bg@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -864,12 +874,12 @@
 				CE7DE28D176EF27500996FD6 /* NewsViewController.xib */,
 				CE7DE290176EF9C200996FD6 /* NewsTableViewController.h */,
 				CE7DE291176EF9C200996FD6 /* NewsTableViewController.m */,
-				E366955C178C52A0007A1B74 /* MainViewController.h */,
-				E366955D178C52A0007A1B74 /* MainViewController.m */,
-				E366955E178C52A0007A1B74 /* MainViewController.xib */,
 				CEF0190A1798DF45009FD024 /* newsDetailControllerViewController.h */,
 				CEF0190B1798DF45009FD024 /* newsDetailControllerViewController.m */,
 				CEF0190C1798DF45009FD024 /* newsDetailControllerViewController.xib */,
+				E3D4A52117B148DF00DBF94F /* NewsCategoryViewController.h */,
+				E3D4A52217B148DF00DBF94F /* NewsCategoryViewController.m */,
+				E3D4A52317B148DF00DBF94F /* NewsCategoryViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -897,6 +907,7 @@
 		CE7DE281176EEFA500996FD6 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				E3D4A51517B1406200DBF94F /* JASidePanels */,
 				E30DD00F17AD631300B5053F /* MBProgressHUD */,
 				E397F6DA17A6ABA900C54A51 /* Tools */,
 				CEEA0B651797D2AF0061C322 /* AFNetworking */,
@@ -976,6 +987,8 @@
 		CEA7B664176B14B800DB68D7 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				E3D4A52617B14FA000DBF94F /* feed_cell_bg_hl@2x.png */,
+				E3D4A52717B14FA000DBF94F /* feed_cell_bg@2x.png */,
 				CEA7B665176B14B800DB68D7 /* about-568h@2x.png */,
 				CEA7B666176B14B800DB68D7 /* about@2x.png */,
 				CEA7B667176B14B800DB68D7 /* banner_back.png */,
@@ -1417,6 +1430,18 @@
 			name = Tools;
 			sourceTree = "<group>";
 		};
+		E3D4A51517B1406200DBF94F /* JASidePanels */ = {
+			isa = PBXGroup;
+			children = (
+				E3D4A51617B1406200DBF94F /* JASidePanelController.h */,
+				E3D4A51717B1406200DBF94F /* JASidePanelController.m */,
+				E3D4A51817B1406200DBF94F /* UIViewController+JASidePanel.h */,
+				E3D4A51917B1406200DBF94F /* UIViewController+JASidePanel.m */,
+			);
+			name = JASidePanels;
+			path = Source;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1827,7 +1852,6 @@
 				CEC83366176EECAE00FCB190 /* icon.png in Resources */,
 				CEC83368176EECBD00FCB190 /* icon@2x.png in Resources */,
 				CE7DE28F176EF27500996FD6 /* NewsViewController.xib in Resources */,
-				E3669560178C52A0007A1B74 /* MainViewController.xib in Resources */,
 				CEEA0B5A1797B98E0061C322 /* blackArrow.png in Resources */,
 				CEEA0B5B1797B98E0061C322 /* blackArrow@2x.png in Resources */,
 				CEEA0B5C1797B98E0061C322 /* blueArrow.png in Resources */,
@@ -1843,6 +1867,9 @@
 				E397F6E117A6B1D200C54A51 /* PullTableViewLan.strings in Resources */,
 				E30DD01717AD639100B5053F /* 37x-Checkmark.png in Resources */,
 				E30DD01817AD639100B5053F /* 37x-Checkmark@2x.png in Resources */,
+				E3D4A52517B148DF00DBF94F /* NewsCategoryViewController.xib in Resources */,
+				E3D4A52817B14FA000DBF94F /* feed_cell_bg_hl@2x.png in Resources */,
+				E3D4A52917B14FA000DBF94F /* feed_cell_bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1874,7 +1901,6 @@
 				CE7DE28E176EF27500996FD6 /* NewsViewController.m in Sources */,
 				CE7DE293176EF9C200996FD6 /* NewsTableViewController.m in Sources */,
 				CEC9A9F017702916004EBBBA /* NewsCell.m in Sources */,
-				E366955F178C52A0007A1B74 /* MainViewController.m in Sources */,
 				CEEA0B561797B98E0061C322 /* EGORefreshTableHeaderView.m in Sources */,
 				CEEA0B571797B98E0061C322 /* LoadMoreTableFooterView.m in Sources */,
 				CEEA0B581797B98E0061C322 /* MessageInterceptor.m in Sources */,
@@ -1893,6 +1919,9 @@
 				CEF0190D1798DF45009FD024 /* newsDetailControllerViewController.m in Sources */,
 				E397F6DD17A6ABC200C54A51 /* Tools.m in Sources */,
 				E30DD01217AD637900B5053F /* MBProgressHUD.m in Sources */,
+				E3D4A51A17B1406200DBF94F /* JASidePanelController.m in Sources */,
+				E3D4A51B17B1406200DBF94F /* UIViewController+JASidePanel.m in Sources */,
+				E3D4A52417B148DF00DBF94F /* NewsCategoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

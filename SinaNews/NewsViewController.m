@@ -26,6 +26,11 @@
       
       self.NewsNavigation = [[UINavigationController alloc] initWithRootViewController:self.newsList];
       
+      //原来设置frame要这样设置，先声明一个出来，再设置
+      CGRect frame= CGRectMake(0, 0, kDeviceWidth, kDeviceHeight);
+      
+      [self.view setFrame:frame];
+      
       UIImage *naviBarBackground = [UIImage imageNamed:@"toolbar_bg@2x"];
       
       UIImage *navSizeImage = [self compressImage:naviBarBackground bySpecifiedWidth:kDeviceWidth andHeight:44];
@@ -61,23 +66,6 @@
         return compressedImg;
 }
 
-- (UIView *)getTtileViewWithTitle:(NSString *)title
-{
-  UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0,0,320,44)];
-  [view setBackgroundColor:[UIColor redColor]];
-//  [view setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight ];
-  
-  UILabel *nameLabel = [[UILabel alloc] init];
-  [nameLabel setFrame:CGRectMake(0, 0, 320, 44)];
-  [nameLabel setBackgroundColor:[UIColor redColor]];
-//  [nameLabel setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin |UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin];
-  [nameLabel setTextColor:[UIColor blackColor]];
-//  [nameLabel setFont:[UIFont boldSystemFontOfSize:17]];
-//  [nameLabel setTextAlignment:UITextAlignmentCenter];
-  [nameLabel setText:title];
-  [view addSubview:nameLabel];
-  return view;
-}
 
 
 

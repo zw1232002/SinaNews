@@ -28,14 +28,14 @@
       //设置cell的长度和位置
       [self setFrame:self.bounds];
       //设置背景
-      UIImage *centerImage = [UIImage imageNamed:@"cell_bg@2x.png"];
+      UIImage *centerImage = [UIImage imageNamed:@"feed_cell_bg@2x.png"];
       //拉伸图片背景，原来如此
       centerImage=[centerImage stretchableImageWithLeftCapWidth:15 topCapHeight:9];
       self.centerImageView = [[UIImageView alloc] initWithImage:centerImage];
       self.backgroundView = self.centerImageView;
       
       //设置高亮状态
-      UIImage *centerImage2 = [UIImage imageNamed:@"cell_bg_hl@2x.png"];
+      UIImage *centerImage2 = [UIImage imageNamed:@"feed_cell_bg_hl@2x.png"];
       //拉伸图片背景，原来如此
       centerImage2=[centerImage2 stretchableImageWithLeftCapWidth:15 topCapHeight:9];
       UIImageView *imageView2 = [[UIImageView alloc] initWithImage:centerImage2];
