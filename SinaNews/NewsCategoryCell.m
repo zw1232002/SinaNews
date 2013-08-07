@@ -24,13 +24,13 @@
       self.backgroundView = backgroundView;
       
       //高亮背景
-      UIImage *selectedBackgrouondImage = [UIImage imageNamed:@"leftchannel_tablecell_bg_Hilighted@2x"];
+      UIImage *selectedBackgrouondImage = [UIImage imageNamed:@"leftchannel_tablecell_bg_selected@2x"];
       UIImageView *selectedBackgroundView = [[UIImageView alloc] initWithImage:selectedBackgrouondImage];
       self.selectedBackgroundView = selectedBackgroundView;
       
       //分类图标
-      UIImage *catThumb = [UIImage imageNamed:@"image@2x.png"];
-      self.categoryThumb = [[UIImageView alloc] initWithImage:catThumb];
+      self.categoryThumb = [UIImageView new];
+      self.categoryThumb.image = [UIImage imageNamed:@"toutiao@2x"];
       self.categoryThumb.frame = CGRectMake(10, 12, 20, 20);
       [self.contentView addSubview:self.categoryThumb];
       
@@ -63,7 +63,9 @@
 {
   if (highlighted)
   {
-    
+    UIImage *backgrouondImage = [UIImage imageNamed:@"leftchannel_tablecell_bg_Hilighted@2x"];
+    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:backgrouondImage];
+    self.backgroundView = backgroundView;
   }
   [super setHighlighted:highlighted];
 }

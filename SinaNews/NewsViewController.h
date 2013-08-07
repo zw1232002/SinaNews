@@ -17,4 +17,5 @@
 //新闻列表控制器
 @property (retain ,nonatomic) NewsTableViewController *newsList;
 
+- (id)initWithTypeName:(NSString *)typeName;
 @end

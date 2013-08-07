@@ -24,29 +24,9 @@
 
 #define cccColor [UIColor colorWithRed:236.0/255.0f green:238.0/255.0f blue:239.0/255.0f alpha:1.0f]
 
-//国内
-#define guoneiURL(pageNo,pagePer) [NSString stringWithFormat:@"http://qingbin.sinaapp.com/api/lists?ntype=国内&pageNo=%d&pagePer=%d&list.htm",pageNo,pagePer]
+#define requestURL(typeName,pageNo,pagePer) [NSString stringWithFormat:@"http://qingbin.sinaapp.com/api/lists?ntype=%@&pageNo=%d&pagePer=%d&list.htm",typeName,pageNo,pagePer]
 
-//国际
-#define guojiURL(pageNo,pagePer) [NSString stringWithFormat:@"http://qingbin.sinaapp.com/api/lists?ntype=国际&pageNo=%d&pagePer=%d&list.htm",pageNo,pagePer]
-
-//社会
-#define shehuiURL(pageNo,pagePer) [NSString stringWithFormat:@"http://qingbin.sinaapp.com/api/lists?ntype=社会&pageNo=%d&pagePer=%d&list.htm",pageNo,pagePer]
-
-//深度
-#define shenduURL(pageNo,pagePer) [NSString stringWithFormat:@"http://qingbin.sinaapp.com/api/lists?ntype=深度&pageNo=%d&pagePer=%d&list.htm",pageNo,pagePer]
-
-//评论
-#define pinglunURL(pageNo,pagePer) [NSString stringWithFormat:@"http://qingbin.sinaapp.com/api/lists?ntype=评论&pageNo=%d&pagePer=%d&list.htm",pageNo,pagePer]
-
-//探索
-#define tansuoURL(pageNo,pagePer) [NSString stringWithFormat:@"http://qingbin.sinaapp.com/api/lists?ntype=探索&pageNo=%d&pagePer=%d&list.htm",pageNo,pagePer]
-
-//军事
-#define junshiURL(pageNo,pagePer) [NSString stringWithFormat:@"http://qingbin.sinaapp.com/api/lists?ntype=军事&pageNo=%d&pagePer=%d&list.htm",pageNo,pagePer]
-
-//图片
-#define tupianURL(pageNo,pagePer) [NSString stringWithFormat:@"http://qingbin.sinaapp.com/api/lists?ntype=图片&pageNo=%d&pagePer=%d&list.htm",pageNo,pagePer]
+#define defaultTypeName @"图片"
 
 
 #define newDetailURL(id) [NSString stringWithFormat:@"http://qingbin.sinaapp.com/api/html/%d.html",id]

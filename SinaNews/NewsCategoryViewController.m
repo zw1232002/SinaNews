@@ -9,6 +9,9 @@
 #import "NewsCategoryViewController.h"
 #import "NewsCategoryCell.h"
 #import "NewsCategoryObject.h"
+#import "JASidePanelController.h"
+#import "UIViewController+JASidePanel.h"
+#import "NewsViewController.h"
 
 @interface NewsCategoryViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -29,7 +32,7 @@
       //开始初始化分类
       NSArray *catNameArray = [[NSArray alloc] initWithObjects:@"国内",@"国际",@"社会",@"深度",@"评论",@"探索",@"军事",@"图片",nil];
       
-      NSArray *catThumbArray = [[NSArray alloc] initWithObjects:@"image@2x",@"joy@2x",@"image@2x",@"joy@2x",@"image@2x",@"joy@2x",@"image@2x",@"joy@2x",nil];
+      NSArray *catThumbArray = [[NSArray alloc] initWithObjects:@"toutiao@2x.png",@"news@2x",@"boke@2x",@"yule@2x",@"tiyu@2x",@"keji@2x",@"caijing@2x",@"tupian@2x",nil];
       
       for (int i=0;i<[catNameArray count];i++)
       {
@@ -115,10 +118,26 @@
   NSInteger row = [indexPath row];
   NewsCategoryObject *cat = [self.categoryArray objectAtIndex:row];
   cell.categoryName.text = cat.title;
-  cell.categoryThumb = [[UIImageView alloc] initWithImage:[UIImage imageNamed:cat.thumb]];
+  cell.categoryThumb.image = [UIImage imageNamed:cat.thumb];
   
+//  NSLog(@"\n%@,%@",cat.title,defaultTypeName);
+//  if (cat.title == defaultTypeName)
+//  {
+//    NSLog(@"yes");
+//    [cell setSelected:YES];
+//  }
   return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  NSInteger row = [indexPath row];
+  NewsCategoryObject *cat = [self.categoryArray objectAtIndex:row];
+  NSLog(@"\n%d",row);
+  self.sidePanelController.centerPanel = [[NewsViewController alloc] initWithTypeName:cat.title];
+  
+}
+
 
 
 @end

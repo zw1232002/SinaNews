@@ -33,13 +33,14 @@
 @end
 
 @implementation NewsTableViewController
-@synthesize newsListArray,page,count,newsListTable;
+@synthesize newsListArray,page,count,newsListTable,typeName;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+      self.typeName =@"";
       
       self.newsListTable = [[PullTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
       
@@ -69,10 +70,7 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  
-//  self.title = @"头条";
-  
-  self.navigationItem.titleView=[[Tools new] getTtileViewWithTitle:@"头条"];
+
   
   self.newsListArray = [NSMutableArray new];
 }
@@ -95,12 +93,12 @@
     }
     self.isFirst = NO;
   }
-  
+  self.navigationItem.titleView=[[Tools new] getTtileViewWithTitle:self.typeName];
 }
 
 - (void)getResult
 {
-  NSString *url = [NSString stringWithString:tupianURL(self.page, perPageNewsCount)];
+  NSString *url = [NSString stringWithString:requestURL(self.typeName, self.page, perPageNewsCount)];
   
   //因为url中有中文，这里进行一下url转义
   NSString *encodeURL = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];

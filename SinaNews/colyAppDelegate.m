@@ -29,7 +29,10 @@
   
   
   //引入新闻控制器
-  self.mainViewController.centerPanel = [[NewsViewController alloc] initWithNibName:@"NewsViewController" bundle:nil];
+//  self.mainViewController.centerPanel = [[NewsViewController alloc] initWithNibName:@"NewsViewController" bundle:nil];
+  
+  self.mainViewController.centerPanel = [[NewsViewController alloc] initWithTypeName:defaultTypeName];
+  
   
   //设置背景
 //  self.mainViewController.centerPanel.view.backgroundColor = cccColor;

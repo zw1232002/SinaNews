@@ -35,11 +35,53 @@
       
       [self.NewsNavigation.navigationBar setBackgroundImage:navSizeImage forBarMetrics:UIBarMetricsDefault];
       
+      //左侧按钮
+//      UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//      
+//      backButton.frame = CGRectMake(0, 0, 44, 44);
+//      
+//      [backButton setBackgroundImage:[UIImage imageNamed:@"navigationbar_left_menu_icon@2x.png"] forState:UIControlStateNormal];
+//      
+//      [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+//      
+//      UIBarButtonItem *navLeftBarItem = [[UIBarButtonItem alloc]initWithCustomView:backButton];
+//      
+//      self.NewsNavigation.navigationItem.leftBarButtonItem = navLeftBarItem;
+//      self.navigationItem.leftBarButtonItem = navLeftBarItem;
+      
       [self.view addSubview:self.NewsNavigation.view];
       
     }
     return self;
 }
+
+- (id)initWithTypeName:(NSString *)typeName
+{
+  if (self) {
+    // Custom initialization
+    [self.view setBackgroundColor:cccColor];
+    
+    self.newsList = [[NewsTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    
+    self.newsList.typeName = typeName;
+    
+    self.NewsNavigation = [[UINavigationController alloc] initWithRootViewController:self.newsList];
+    
+    [self.view setFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight)];
+    
+    UIImage *naviBarBackground = [UIImage imageNamed:@"toolbar_bg@2x"];
+    
+    UIImage *navSizeImage = [self compressImage:naviBarBackground bySpecifiedWidth:kDeviceWidth andHeight:44];
+    
+    [self.NewsNavigation.navigationBar setBackgroundImage:navSizeImage forBarMetrics:UIBarMetricsDefault];
+    
+    [self.view addSubview:self.NewsNavigation.view];
+    
+  }
+  return self;
+}
+
+
 
 - (void)viewDidLoad
 {
