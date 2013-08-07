@@ -1,15 +1,14 @@
 //
-//  newsDetailControllerViewController.h
+//  NewsDetailViewController.h
 //  SinaNews
 //
-//  Created by coly on 13-7-19.
+//  Created by coly on 13-8-7.
 //  Copyright (c) 2013年 coly. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface newsDetailControllerViewController : UIViewController
-
+@interface NewsDetailViewController : UIViewController
 
 - (void)loadWebViewFromNewsId:(int)id andSetViewTitle:(NSString *)title;
 @end

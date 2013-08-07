@@ -10,8 +10,8 @@
 #import "NewsCell.h"
 #import "AFJSONRequestOperation.h"
 #import "UIImageView+AFNetworking.h"
-#import "newsObject.h"
-#import "newsDetailControllerViewController.h"
+#import "NewsObject.h"
+#import "NewsDetailViewController.h"
 #import "Tools.h"
 
 
@@ -137,7 +137,7 @@
 - (void)setData:(NSDictionary *)data
 {
   for (NSDictionary *dict in data) {
-    newsObject *news = [[newsObject alloc] initWithDictionary:dict];
+    NewsObject *news = [[NewsObject alloc] initWithDictionary:dict];
     [self.newsListArray addObject:news];
   }
   
@@ -183,7 +183,7 @@
   //这里判断一下当前的news数组是不是已经加载进来了，如果不判断，会报错
   if (row <= [self.newsListArray count])
   {
-    newsObject *news = [self.newsListArray objectAtIndex:row];
+    NewsObject *news = [self.newsListArray objectAtIndex:row];
     
     cell.newsTitle.text = news.title;
     cell.newsPublishDate.text = news.addTime;
@@ -260,9 +260,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
   NSUInteger row = [indexPath row];
-  newsObject *news = [self.newsListArray objectAtIndex:row];
+  NewsObject *news = [self.newsListArray objectAtIndex:row];
   int newsId = news.id;
-  newsDetailControllerViewController *newsDetail = [[newsDetailControllerViewController alloc] initWithNibName:@"newsDetailControllerViewController" bundle:nil];
+  NewsDetailViewController *newsDetail = [[NewsDetailViewController alloc] initWithNibName:@"NewsDetailViewController" bundle:nil];
   [newsDetail loadWebViewFromNewsId:newsId andSetViewTitle:news.title];
   [self.navigationController pushViewController:newsDetail animated:YES];
 }

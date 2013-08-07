@@ -21,15 +21,13 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-      [self.view setBackgroundColor:[UIColor clearColor]];
+      [self.view setBackgroundColor:cccColor];
+      
       self.newsList = [[NewsTableViewController alloc] initWithStyle:UITableViewStylePlain];
       
       self.NewsNavigation = [[UINavigationController alloc] initWithRootViewController:self.newsList];
       
-      //原来设置frame要这样设置，先声明一个出来，再设置
-      CGRect frame= CGRectMake(0, 0, kDeviceWidth, kDeviceHeight);
-      
-      [self.view setFrame:frame];
+      [self.view setFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight)];
       
       UIImage *naviBarBackground = [UIImage imageNamed:@"toolbar_bg@2x"];
       

@@ -10,4 +10,6 @@
 
 @interface NewsCategoryViewController : UIViewController
 
+@property (strong,nonatomic) NSMutableArray *categoryArray;
+
 @end

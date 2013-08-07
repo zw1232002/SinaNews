@@ -22,24 +22,27 @@
   self.mainViewController.shouldDelegateAutorotateToVisiblePanel = NO;
   
   //引入新闻分类控制器
-  self.mainViewController.leftPanel = [[NewsCategoryViewController alloc] initWithNibName:@"NewsCategoryViewController" bundle:nil];
+  self.mainViewController.leftPanel = [[NewsCategoryViewController alloc] init];
+  
+  //设置左边panel的width
+  self.mainViewController.leftFixedWidth = leftChanelWidth;
+  
   
   //引入新闻控制器
   self.mainViewController.centerPanel = [[NewsViewController alloc] initWithNibName:@"NewsViewController" bundle:nil];
   
   //设置背景
-  self.mainViewController.centerPanel.view.backgroundColor = cccColor;
+//  self.mainViewController.centerPanel.view.backgroundColor = cccColor;
+  
   
   self.window.rootViewController = self.mainViewController;
   
-  
   application.statusBarStyle = UIStatusBarStyleBlackOpaque;
-  
-  
-  
+
   [self.window makeKeyAndVisible];
   return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

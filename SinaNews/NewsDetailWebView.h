@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface newsDetailWebView : UIWebView
+@interface NewsDetailWebView : UIWebView
 
 //加载网页
 - (void)loadHTMLFromString:(NSString *)stringURL;

@@ -6,9 +6,9 @@
 //  Copyright (c) 2013年 coly. All rights reserved.
 //
 
-#import "newsDetailWebView.h"
+#import "NewsDetailWebView.h"
 
-@implementation newsDetailWebView
+@implementation NewsDetailWebView
 
 - (id)initWithFrame:(CGRect)frame
 {

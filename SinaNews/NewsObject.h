@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface newsObject : NSObject
+@interface NewsObject : NSObject
 
 @property (assign, nonatomic) int id;//id
 @property (strong, nonatomic) NSString *title;//标题
 @property (strong, nonatomic) NSString *addTime;//发表时间
 @property (strong, nonatomic) NSString *thumb;//缩略图地址
 
-- (newsObject *)initWithDictionary:(NSDictionary *)news;
+- (NewsObject *)initWithDictionary:(NSDictionary *)news;
 @end

@@ -25,7 +25,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
       // Initialization code
-      //设置cell的长度和位置
+      //设置cell的长度和位置,注意，这个方法覆盖了默认方法
       [self setFrame:self.bounds];
       //设置背景
       UIImage *centerImage = [UIImage imageNamed:@"feed_cell_bg@2x.png"];
@@ -89,18 +89,18 @@
 }
 
 
-- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
+- (void)setHighlighted:(BOOL)highlighted
 {
     if (highlighted)
     {
       
     }
   // 必须要设置这个，不然高亮背景显示不出来
-   [super setHighlighted:highlighted animated:animated];
+   [super setHighlighted:highlighted];
 }
 
 /**
- *  @brief 设置cell的frame
+ *  @brief 设置cell的frame,覆盖默认的方法
  */
 - (void)setFrame:(CGRect)frame
 {
