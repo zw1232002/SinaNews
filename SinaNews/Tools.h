@@ -14,7 +14,7 @@
 /**
  * @brief 用UILabel充当导航控制器的标题，获取标题view
  */
-- (UIView *)getTtileViewWithTitle:(NSString *)title;
+- (UIView *)getTtileViewWithTitle:(NSString *)title andPositionOffset:(CGFloat)offset;
 
 //弹出提示框
 - (void)tipWithText:(NSString *)text andView:(UIView *)view;

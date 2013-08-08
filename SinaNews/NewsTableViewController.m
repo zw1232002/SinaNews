@@ -15,6 +15,7 @@
 #import "Tools.h"
 
 
+
 @class PullTableView;
 
 
@@ -62,10 +63,24 @@
      [self.view setBackgroundColor:[UIColor clearColor]];
       
       
+      //左侧按钮
+      UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+      
+      backButton.frame = CGRectMake(0, 0, 44, 44);
+      
+      [backButton setBackgroundImage:[UIImage imageNamed:@"navigationbar_left_menu_icon@2x.png"] forState:UIControlStateNormal];
+      
+//      [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+      
+      UIBarButtonItem *navLeftBarItem = [[UIBarButtonItem alloc]initWithCustomView:backButton];
+      
+      self.navigationItem.leftBarButtonItem = navLeftBarItem;
       
     }
     return self;
 }
+
+
 
 - (void)viewDidLoad
 {
@@ -93,7 +108,7 @@
     }
     self.isFirst = NO;
   }
-  self.navigationItem.titleView=[[Tools new] getTtileViewWithTitle:self.typeName];
+  self.navigationItem.titleView=[[Tools new] getTtileViewWithTitle:self.typeName andPositionOffset:110.f];
 }
 
 - (void)getResult

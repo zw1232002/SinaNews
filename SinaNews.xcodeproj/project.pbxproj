@@ -11,7 +11,6 @@
 		CE36E26E17B22F14006BD19A /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE36E26C17B22F12006BD19A /* NewsDetailViewController.m */; };
 		CE36E26F17B22F14006BD19A /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE36E26D17B22F12006BD19A /* NewsDetailViewController.xib */; };
 		CE7DE28E176EF27500996FD6 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7DE28C176EF27500996FD6 /* NewsViewController.m */; };
-		CE7DE28F176EF27500996FD6 /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7DE28D176EF27500996FD6 /* NewsViewController.xib */; };
 		CE7DE293176EF9C200996FD6 /* NewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7DE291176EF9C200996FD6 /* NewsTableViewController.m */; };
 		CEA7B648176B148600DB68D7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA7B647176B148600DB68D7 /* UIKit.framework */; };
 		CEA7B64A176B148600DB68D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA7B649176B148600DB68D7 /* Foundation.framework */; };
@@ -380,7 +379,6 @@
 		CE36E26D17B22F12006BD19A /* NewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsDetailViewController.xib; sourceTree = "<group>"; };
 		CE7DE28B176EF27500996FD6 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		CE7DE28C176EF27500996FD6 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
-		CE7DE28D176EF27500996FD6 /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
 		CE7DE290176EF9C200996FD6 /* NewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewController.h; sourceTree = "<group>"; };
 		CE7DE291176EF9C200996FD6 /* NewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewController.m; sourceTree = "<group>"; };
 		CEA7B644176B148600DB68D7 /* 新浪新闻.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新浪新闻.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -791,7 +789,6 @@
 			children = (
 				CE7DE28B176EF27500996FD6 /* NewsViewController.h */,
 				CE7DE28C176EF27500996FD6 /* NewsViewController.m */,
-				CE7DE28D176EF27500996FD6 /* NewsViewController.xib */,
 				CE7DE290176EF9C200996FD6 /* NewsTableViewController.h */,
 				CE7DE291176EF9C200996FD6 /* NewsTableViewController.m */,
 				E3D4A52117B148DF00DBF94F /* NewsCategoryViewController.h */,
@@ -1681,7 +1678,6 @@
 				CEA7B918176B14B900DB68D7 /* weiboLogout@2x.png in Resources */,
 				CEC83366176EECAE00FCB190 /* icon.png in Resources */,
 				CEC83368176EECBD00FCB190 /* icon@2x.png in Resources */,
-				CE7DE28F176EF27500996FD6 /* NewsViewController.xib in Resources */,
 				CEEA0B5A1797B98E0061C322 /* blackArrow.png in Resources */,
 				CEEA0B5B1797B98E0061C322 /* blackArrow@2x.png in Resources */,
 				CEEA0B5C1797B98E0061C322 /* blueArrow.png in Resources */,

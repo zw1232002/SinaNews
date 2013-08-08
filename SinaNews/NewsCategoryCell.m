@@ -8,8 +8,17 @@
 
 #import "NewsCategoryCell.h"
 
+@interface NewsCategoryCell()
+
+@property (strong, nonatomic) UIImageView *defaultBackView;
+
+@property (strong, nonatomic) UIImageView *hightedBackView;
+
+@end
+
 @implementation NewsCategoryCell
 @synthesize categoryName,categoryThumb;
+@synthesize defaultBackView,highlighted;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -20,10 +29,13 @@
       
       //背景
       UIImage *backgrouondImage = [UIImage imageNamed:@"leftchannel_tablecell_bg_unselected@2x"];
-      UIImageView *backgroundView = [[UIImageView alloc] initWithImage:backgrouondImage];
-      self.backgroundView = backgroundView;
+      self.defaultBackView = [[UIImageView alloc] initWithImage:backgrouondImage];
+      self.backgroundView = self.defaultBackView;
       
       //高亮背景
+      self.hightedBackView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"leftchannel_tablecell_bg_Hilighted@2x"]];
+      
+      //选中背景
       UIImage *selectedBackgrouondImage = [UIImage imageNamed:@"leftchannel_tablecell_bg_selected@2x"];
       UIImageView *selectedBackgroundView = [[UIImageView alloc] initWithImage:selectedBackgrouondImage];
       self.selectedBackgroundView = selectedBackgroundView;
@@ -47,27 +59,19 @@
     return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
 {
-  
-  if (selected)
+  if ( highlighted)
   {
+    self.backgroundView = self.hightedBackView;
     
+  }else
+  {
+    self.backgroundView = self.defaultBackView;
   }
   
-  [super setSelected:selected animated:animated];
-}
-
-
-- (void)setHighlighted:(BOOL)highlighted
-{
-  if (highlighted)
-  {
-    UIImage *backgrouondImage = [UIImage imageNamed:@"leftchannel_tablecell_bg_Hilighted@2x"];
-    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:backgrouondImage];
-    self.backgroundView = backgroundView;
-  }
-  [super setHighlighted:highlighted];
+  //这个不能调用，调用了会使用selectedBackgroundView的背景作为高亮背景
+//  [super setHighlighted:highlighted animated:animated];
 }
 
 /**
@@ -75,7 +79,6 @@
  */
 - (void)setFrame:(CGRect)frame
 {
-//  NSLog(@"%f",frame.size.width);
   frame.size.width -=20;
   frame.size.height -=5;
   [super setFrame:frame];

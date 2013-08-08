@@ -12,12 +12,14 @@
 @implementation Tools
 
 
-- (UIView *)getTtileViewWithTitle:(NSString *)title
+- (UIView *)getTtileViewWithTitle:(NSString *)title andPositionOffset:(CGFloat )offset
 {
   UILabel *nameLabel = [[UILabel alloc] init];
   //这里注意了，不要把width设置成屏幕的宽度，这样会导致无法自适应居中
   //随便设置一个值，系统都会自己居中的
-  [nameLabel setFrame:CGRectMake(0, 0, 220, 44)];
+  CGRect frame = CGRectMake(0, 0, kDeviceWidth, 44);
+  frame.size.width -=offset;
+  [nameLabel setFrame:frame];
   [nameLabel setBackgroundColor:[UIColor clearColor]];
   [nameLabel setTextColor:lightGreyColor];
   [nameLabel setFont:[UIFont boldSystemFontOfSize:19]];

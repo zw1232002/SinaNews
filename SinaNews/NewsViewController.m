@@ -7,6 +7,8 @@
 //
 
 #import "NewsViewController.h"
+#import "JASidePanelController.h"
+#import "UIViewController+JASidePanel.h"
 
 @interface NewsViewController ()
 
@@ -16,45 +18,6 @@
 @synthesize NewsNavigation,newsList;
 
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-      [self.view setBackgroundColor:cccColor];
-      
-      self.newsList = [[NewsTableViewController alloc] initWithStyle:UITableViewStylePlain];
-      
-      self.NewsNavigation = [[UINavigationController alloc] initWithRootViewController:self.newsList];
-      
-      [self.view setFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight)];
-      
-      UIImage *naviBarBackground = [UIImage imageNamed:@"toolbar_bg@2x"];
-      
-      UIImage *navSizeImage = [self compressImage:naviBarBackground bySpecifiedWidth:kDeviceWidth andHeight:44];
-      
-      [self.NewsNavigation.navigationBar setBackgroundImage:navSizeImage forBarMetrics:UIBarMetricsDefault];
-      
-      //左侧按钮
-//      UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//      
-//      backButton.frame = CGRectMake(0, 0, 44, 44);
-//      
-//      [backButton setBackgroundImage:[UIImage imageNamed:@"navigationbar_left_menu_icon@2x.png"] forState:UIControlStateNormal];
-//      
-//      [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-//      
-//      UIBarButtonItem *navLeftBarItem = [[UIBarButtonItem alloc]initWithCustomView:backButton];
-//      
-//      self.NewsNavigation.navigationItem.leftBarButtonItem = navLeftBarItem;
-//      self.navigationItem.leftBarButtonItem = navLeftBarItem;
-      
-      [self.view addSubview:self.NewsNavigation.view];
-      
-    }
-    return self;
-}
-
 - (id)initWithTypeName:(NSString *)typeName
 {
   if (self) {
@@ -63,6 +26,7 @@
     
     self.newsList = [[NewsTableViewController alloc] initWithStyle:UITableViewStylePlain];
     
+    //设置默认分类
     self.newsList.typeName = typeName;
     
     self.NewsNavigation = [[UINavigationController alloc] initWithRootViewController:self.newsList];
@@ -82,6 +46,11 @@
 }
 
 
+- (void)showLeftChanel
+{
+  
+}
+
 
 - (void)viewDidLoad
 {
@@ -94,7 +63,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-                                    
+
+/**
+ * @brief 创建制定长度和宽度的图片
+ */
 - (UIImage *)compressImage:(UIImage *)imgSrc bySpecifiedWidth:(int)width andHeight:(int)height
 {
         CGSize size = {width, height};

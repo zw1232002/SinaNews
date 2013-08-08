@@ -30,9 +30,9 @@
       self.categoryArray = [[NSMutableArray alloc] init];
       
       //开始初始化分类
-      NSArray *catNameArray = [[NSArray alloc] initWithObjects:@"国内",@"国际",@"社会",@"深度",@"评论",@"探索",@"军事",@"图片",nil];
+      NSArray *catNameArray = [[NSArray alloc] initWithObjects:@"国内",@"国际",@"图片",@"社会",@"探索",@"军事",@"评论",nil];
       
-      NSArray *catThumbArray = [[NSArray alloc] initWithObjects:@"toutiao@2x.png",@"news@2x",@"boke@2x",@"yule@2x",@"tiyu@2x",@"keji@2x",@"caijing@2x",@"tupian@2x",nil];
+      NSArray *catThumbArray = [[NSArray alloc] initWithObjects:@"toutiao@2x.png",@"yule@2x",@"tupian@2x",@"boke@2x",@"keji@2x",@"caijing@2x",@"tiyu@2x",nil];
       
       for (int i=0;i<[catNameArray count];i++)
       {
@@ -121,22 +121,24 @@
   cell.categoryThumb.image = [UIImage imageNamed:cat.thumb];
   
 //  NSLog(@"\n%@,%@",cat.title,defaultTypeName);
-//  if (cat.title == defaultTypeName)
-//  {
-//    NSLog(@"yes");
-//    [cell setSelected:YES];
-//  }
+  if ([cat.title isEqual: defaultTypeName])
+  {
+    //设置默认选中
+    [self.categoryTable selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+  }
   return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+  
   NSInteger row = [indexPath row];
   NewsCategoryObject *cat = [self.categoryArray objectAtIndex:row];
-  NSLog(@"\n%d",row);
   self.sidePanelController.centerPanel = [[NewsViewController alloc] initWithTypeName:cat.title];
   
 }
+
+
 
 
 

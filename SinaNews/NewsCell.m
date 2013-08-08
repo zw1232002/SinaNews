@@ -34,7 +34,7 @@
       self.centerImageView = [[UIImageView alloc] initWithImage:centerImage];
       self.backgroundView = self.centerImageView;
       
-      //设置高亮状态
+      //设置按下去的状态
       UIImage *centerImage2 = [UIImage imageNamed:@"feed_cell_bg_hl@2x.png"];
       //拉伸图片背景，原来如此
       centerImage2=[centerImage2 stretchableImageWithLeftCapWidth:15 topCapHeight:9];
@@ -91,11 +91,7 @@
 
 - (void)setHighlighted:(BOOL)highlighted
 {
-    if (highlighted)
-    {
-      
-    }
-  // 必须要设置这个，不然高亮背景显示不出来
+  //用选中背景作为高亮背景显示
    [super setHighlighted:highlighted];
 }
 
