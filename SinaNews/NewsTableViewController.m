@@ -13,6 +13,8 @@
 #import "NewsObject.h"
 #import "NewsDetailViewController.h"
 #import "Tools.h"
+#import "JASidePanelController.h"
+#import "UIViewController+JASidePanel.h"
 
 
 
@@ -63,16 +65,16 @@
      [self.view setBackgroundColor:[UIColor clearColor]];
       
       
-      //左侧按钮
-      UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+      //显示左侧按钮
+      UIButton *showLeftChanelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
       
-      backButton.frame = CGRectMake(0, 0, 44, 44);
+      showLeftChanelBtn.frame = CGRectMake(0, 0, 44, 44);
       
-      [backButton setBackgroundImage:[UIImage imageNamed:@"navigationbar_left_menu_icon@2x.png"] forState:UIControlStateNormal];
+      [showLeftChanelBtn setBackgroundImage:[UIImage imageNamed:@"navigationbar_left_menu_icon@2x.png"] forState:UIControlStateNormal];
       
-//      [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+      [showLeftChanelBtn addTarget:self action:@selector(showLeftChanel) forControlEvents:UIControlEventTouchUpInside];
       
-      UIBarButtonItem *navLeftBarItem = [[UIBarButtonItem alloc]initWithCustomView:backButton];
+      UIBarButtonItem *navLeftBarItem = [[UIBarButtonItem alloc]initWithCustomView:showLeftChanelBtn];
       
       self.navigationItem.leftBarButtonItem = navLeftBarItem;
       
@@ -80,7 +82,17 @@
     return self;
 }
 
-
+/**
+ *  @brief 显示左视图
+ *
+ */
+- (void)showLeftChanel
+{
+  NSLog(@"\n%@",[self.sidePanelController class]);
+//  [self.navigationController.parentViewController]
+//  [self.navigationController.parentViewController.sidePanelController showLeftPanelAnimated:YES];
+//  [self.sidePanelController showLeftPanelAnimated:YES];
+}
 
 - (void)viewDidLoad
 {
@@ -118,7 +130,7 @@
   //因为url中有中文，这里进行一下url转义
   NSString *encodeURL = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
   
-  NSLog(@"\n%@",encodeURL);
+//  NSLog(@"\n%@",encodeURL);
   
   NSURL *requestUrl = [NSURL URLWithString:encodeURL];
   

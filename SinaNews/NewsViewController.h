@@ -18,4 +18,6 @@
 @property (retain ,nonatomic) NewsTableViewController *newsList;
 
 - (id)initWithTypeName:(NSString *)typeName;
+
+- (void)showLeftChanel;
 @end

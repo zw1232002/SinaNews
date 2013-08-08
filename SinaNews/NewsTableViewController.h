@@ -20,4 +20,5 @@
 //分类名称
 @property (strong, nonatomic) NSString *typeName;
 
+
 @end

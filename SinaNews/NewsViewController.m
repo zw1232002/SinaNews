@@ -38,17 +38,23 @@
     UIImage *navSizeImage = [self compressImage:naviBarBackground bySpecifiedWidth:kDeviceWidth andHeight:44];
     
     [self.NewsNavigation.navigationBar setBackgroundImage:navSizeImage forBarMetrics:UIBarMetricsDefault];
+
     
     [self.view addSubview:self.NewsNavigation.view];
+    
     
   }
   return self;
 }
 
-
+/**
+ *  @brief 显示左视图
+ *
+ */
 - (void)showLeftChanel
 {
-  
+  NSLog(@"%@",[self.sidePanelController class]);
+  [self.sidePanelController showLeftPanelAnimated:YES];
 }
 
 
