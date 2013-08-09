@@ -9,15 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "NewsTableViewController.h"
 
-@interface NewsViewController : UIViewController
+@interface NewsViewController : UINavigationController
 
-//新闻导航控制器
-@property (retain, nonatomic) UINavigationController *NewsNavigation;
-
-//新闻列表控制器
-@property (retain ,nonatomic) NewsTableViewController *newsList;
-
-- (id)initWithTypeName:(NSString *)typeName;
-
-- (void)showLeftChanel;
 @end

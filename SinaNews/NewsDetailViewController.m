@@ -23,8 +23,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-//      self.navigationItem.titleView = [[Tools new]getTtileViewWithTitle:@"新闻详细" an];
-      self.navigationItem.titleView=[[Tools new] getTtileViewWithTitle:@"新闻详细" andPositionOffset:110.f];
+      self.navigationItem.titleView=[Tools getTtileViewWithTitle:@"新闻详细" andPositionOffset:110.f];
       
       //开始自定义返回按钮
       UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];

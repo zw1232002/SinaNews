@@ -9,9 +9,10 @@
 #import "NewsCategoryViewController.h"
 #import "NewsCategoryCell.h"
 #import "NewsCategoryObject.h"
-#import "JASidePanelController.h"
+#import "ColySidePanelController.h"
 #import "UIViewController+JASidePanel.h"
 #import "NewsViewController.h"
+#import "NewsTableViewController.h"
 
 @interface NewsCategoryViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -134,7 +135,13 @@
   
   NSInteger row = [indexPath row];
   NewsCategoryObject *cat = [self.categoryArray objectAtIndex:row];
-  self.sidePanelController.centerPanel = [[NewsViewController alloc] initWithTypeName:cat.title];
+  
+  NewsTableViewController *table = [[NewsTableViewController alloc] initWithStyle:UITableViewStylePlain];
+  
+  //设置默认分类
+  table.typeName = cat.title;
+  
+  self.sidePanelController.centerPanel = [[NewsViewController alloc] initWithRootViewController:table];
   
 }
 

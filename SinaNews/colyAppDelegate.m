@@ -7,6 +7,7 @@
 //
 
 #import "colyAppDelegate.h"
+#import "NewsTableViewController.h"
 
 @implementation colyAppDelegate
 @synthesize mainViewController;
@@ -17,25 +18,20 @@
   // Override point for customization after application launch.
   
   //设置
-  self.mainViewController = [[JASidePanelController alloc] init];
-  
-  self.mainViewController.shouldDelegateAutorotateToVisiblePanel = NO;
+  self.mainViewController = [[ColySidePanelController alloc] init];
   
   //引入新闻分类控制器
   self.mainViewController.leftPanel = [[NewsCategoryViewController alloc] init];
   
-  //设置左边panel的width
-  self.mainViewController.leftFixedWidth = leftChanelWidth;
   
+  //初始化新闻列表table
+  NewsTableViewController *table = [[NewsTableViewController alloc] initWithStyle:UITableViewStylePlain];
   
-  //引入新闻控制器
-//  self.mainViewController.centerPanel = [[NewsViewController alloc] initWithNibName:@"NewsViewController" bundle:nil];
+  //设置默认分类
+  table.typeName = defaultTypeName;
   
-  self.mainViewController.centerPanel = [[NewsViewController alloc] initWithTypeName:defaultTypeName];
-  
-  
-  //设置背景
-//  self.mainViewController.centerPanel.view.backgroundColor = cccColor;
+  //初始化新闻控制器
+  self.mainViewController.centerPanel = [[NewsViewController alloc] initWithRootViewController:table];
   
   
   self.window.rootViewController = self.mainViewController;

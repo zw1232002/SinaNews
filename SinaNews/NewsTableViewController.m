@@ -13,8 +13,6 @@
 #import "NewsObject.h"
 #import "NewsDetailViewController.h"
 #import "Tools.h"
-#import "JASidePanelController.h"
-#import "UIViewController+JASidePanel.h"
 
 
 
@@ -64,35 +62,10 @@
       
      [self.view setBackgroundColor:[UIColor clearColor]];
       
-      
-      //显示左侧按钮
-      UIButton *showLeftChanelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-      
-      showLeftChanelBtn.frame = CGRectMake(0, 0, 44, 44);
-      
-      [showLeftChanelBtn setBackgroundImage:[UIImage imageNamed:@"navigationbar_left_menu_icon@2x.png"] forState:UIControlStateNormal];
-      
-      [showLeftChanelBtn addTarget:self action:@selector(showLeftChanel) forControlEvents:UIControlEventTouchUpInside];
-      
-      UIBarButtonItem *navLeftBarItem = [[UIBarButtonItem alloc]initWithCustomView:showLeftChanelBtn];
-      
-      self.navigationItem.leftBarButtonItem = navLeftBarItem;
-      
     }
     return self;
 }
 
-/**
- *  @brief 显示左视图
- *
- */
-- (void)showLeftChanel
-{
-  NSLog(@"\n%@",[self.sidePanelController class]);
-//  [self.navigationController.parentViewController]
-//  [self.navigationController.parentViewController.sidePanelController showLeftPanelAnimated:YES];
-//  [self.sidePanelController showLeftPanelAnimated:YES];
-}
 
 - (void)viewDidLoad
 {
@@ -120,7 +93,7 @@
     }
     self.isFirst = NO;
   }
-  self.navigationItem.titleView=[[Tools new] getTtileViewWithTitle:self.typeName andPositionOffset:110.f];
+  self.navigationItem.titleView=[Tools getTtileViewWithTitle:self.typeName andPositionOffset:110.f];
 }
 
 - (void)getResult
@@ -129,8 +102,6 @@
   
   //因为url中有中文，这里进行一下url转义
   NSString *encodeURL = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-  
-//  NSLog(@"\n%@",encodeURL);
   
   NSURL *requestUrl = [NSURL URLWithString:encodeURL];
   
@@ -141,7 +112,6 @@
   
   AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSURLResponse *response, id JSON)
   {
-//    NSLog(@"\n%@\n",JSON);
     if (JSON)
     {
       self.count = [[JSON objectForKey:@"total"] intValue];
@@ -250,12 +220,10 @@
  */
 - (void)loadMoreToTable
 {
-//  NSLog(@"总纪录数：%d,计算出的总页数：%f,当前页：%d",self.count,ceil(self.count/perPageNewsCount),self.page);
   //判断一下总页数，超出不再请求
   if (ceil(self.count/perPageNewsCount)< self.page)
   {
-//    NSLog(@"下面没有数据了！");
-    [[Tools new] tipWithText:@"没有更多数据了！" andView:self.navigationController.view];
+    [Tools tipWithText:@"没有更多数据了！" andView:self.navigationController.view];
     self.newsListTable.pullTableIsLoadingMore = NO;
     self.newsListTable.pullTableIsRefreshing = NO;
   }else

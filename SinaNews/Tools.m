@@ -12,7 +12,7 @@
 @implementation Tools
 
 
-- (UIView *)getTtileViewWithTitle:(NSString *)title andPositionOffset:(CGFloat )offset
++(UIView *)getTtileViewWithTitle:(NSString *)title andPositionOffset:(CGFloat)offset
 {
   UILabel *nameLabel = [[UILabel alloc] init];
   //这里注意了，不要把width设置成屏幕的宽度，这样会导致无法自适应居中
@@ -28,8 +28,7 @@
   return nameLabel;
 }
 
-
-- (void)tipWithText:(NSString *)text andView:(UIView *)view
++(void)tipWithText:(NSString *)text andView:(UIView *)view
 {
   MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
   hud.mode = MBProgressHUDModeText;
@@ -38,6 +37,21 @@
   hud.yOffset = 20.f;
   hud.removeFromSuperViewOnHide = YES;
   [hud hide:YES afterDelay:2];
+
+}
+
+/**
+ * @brief 创建制定长度和宽度的图片
+ */
++(UIImage *)compressImage:(UIImage *)imgSrc bySpecifiedWidth:(int)width andHeight:(int)height
+{
+  CGSize size = {width, height};
+  UIGraphicsBeginImageContext(size);
+  CGRect rect = {{0,0}, size};
+  [imgSrc drawInRect:rect];
+  UIImage *compressedImg = UIGraphicsGetImageFromCurrentImageContext();
+  UIGraphicsEndImageContext();
+  return compressedImg;
 }
 
 

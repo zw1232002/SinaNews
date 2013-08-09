@@ -363,6 +363,7 @@
 		E30DD01817AD639100B5053F /* 37x-Checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E30DD01417AD639100B5053F /* 37x-Checkmark@2x.png */; };
 		E397F6DD17A6ABC200C54A51 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = E397F6DC17A6ABC200C54A51 /* Tools.m */; };
 		E397F6E117A6B1D200C54A51 /* PullTableViewLan.strings in Resources */ = {isa = PBXBuildFile; fileRef = E397F6E317A6B1D200C54A51 /* PullTableViewLan.strings */; };
+		E3BBC1D717B55541006886CF /* ColySidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3BBC1D617B55541006886CF /* ColySidePanelController.m */; };
 		E3D4A51A17B1406200DBF94F /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D4A51717B1406200DBF94F /* JASidePanelController.m */; };
 		E3D4A51B17B1406200DBF94F /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D4A51917B1406200DBF94F /* UIViewController+JASidePanel.m */; };
 		E3D4A52417B148DF00DBF94F /* NewsCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D4A52217B148DF00DBF94F /* NewsCategoryViewController.m */; };
@@ -758,6 +759,8 @@
 		E397F6E017A6B1BD00C54A51 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		E397F6E217A6B1D200C54A51 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/PullTableViewLan.strings"; sourceTree = "<group>"; };
 		E397F6E417A6B1DC00C54A51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PullTableViewLan.strings; sourceTree = "<group>"; };
+		E3BBC1D517B55541006886CF /* ColySidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColySidePanelController.h; sourceTree = "<group>"; };
+		E3BBC1D617B55541006886CF /* ColySidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColySidePanelController.m; sourceTree = "<group>"; };
 		E3D4A51617B1406200DBF94F /* JASidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JASidePanelController.h; sourceTree = "<group>"; };
 		E3D4A51717B1406200DBF94F /* JASidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASidePanelController.m; sourceTree = "<group>"; };
 		E3D4A51817B1406200DBF94F /* UIViewController+JASidePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JASidePanel.h"; sourceTree = "<group>"; };
@@ -797,6 +800,8 @@
 				CE36E26B17B22F11006BD19A /* NewsDetailViewController.h */,
 				CE36E26C17B22F12006BD19A /* NewsDetailViewController.m */,
 				CE36E26D17B22F12006BD19A /* NewsDetailViewController.xib */,
+				E3BBC1D517B55541006886CF /* ColySidePanelController.h */,
+				E3BBC1D617B55541006886CF /* ColySidePanelController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -1758,6 +1763,7 @@
 				CE36E26A17B225D3006BD19A /* NewsCategoryCell.m in Sources */,
 				CE36E26E17B22F14006BD19A /* NewsDetailViewController.m in Sources */,
 				CEC0E3C817B23DAD00D37C04 /* NewsCategoryObject.m in Sources */,
+				E3BBC1D717B55541006886CF /* ColySidePanelController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
