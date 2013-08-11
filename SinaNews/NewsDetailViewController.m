@@ -88,11 +88,20 @@
   [self.activeView stopAnimating];
   [self.loadingView removeFromSuperview];
   
+//  [webView stringByEvaluatingJavaScriptFromString:@"var script = document.createElement('script');"
+//   "script.type = 'text/javascript';"
+//   "script.text = \"function myFunction() { "
+//   ""
+//   "}\";"
+//   "document.getElementsByTagName('head')[0].appendChild(script);"];
+  
+//  [webView stringByEvaluatingJavaScriptFromString:@"myFunction();"];
+  
 }
 
 - (void) webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
-  NSLog(@"didFailLoadWithError:%@", error);
+  debugLog(@"didFailLoadWithError:%@", error);
 }
 
 

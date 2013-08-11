@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "NewsTableViewController.h"
+#import "MLNavigationController.h"
 
-@interface NewsViewController : UINavigationController
+@interface NewsViewController : MLNavigationController
 
 @end

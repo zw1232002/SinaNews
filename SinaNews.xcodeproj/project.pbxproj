@@ -352,6 +352,7 @@
 		E30DD01717AD639100B5053F /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = E30DD01317AD639100B5053F /* 37x-Checkmark.png */; };
 		E30DD01817AD639100B5053F /* 37x-Checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E30DD01417AD639100B5053F /* 37x-Checkmark@2x.png */; };
 		E368780C17B7C49400AA82FC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E368780B17B7C49400AA82FC /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E368781017B7E05C00AA82FC /* MLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E368780F17B7E05C00AA82FC /* MLNavigationController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E397F6DD17A6ABC200C54A51 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = E397F6DC17A6ABC200C54A51 /* Tools.m */; };
 		E397F6E117A6B1D200C54A51 /* PullTableViewLan.strings in Resources */ = {isa = PBXBuildFile; fileRef = E397F6E317A6B1D200C54A51 /* PullTableViewLan.strings */; };
 		E3BBC1D717B55541006886CF /* ColySidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3BBC1D617B55541006886CF /* ColySidePanelController.m */; };
@@ -739,6 +740,8 @@
 		E30DD01417AD639100B5053F /* 37x-Checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark@2x.png"; sourceTree = "<group>"; };
 		E368780A17B7C49400AA82FC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		E368780B17B7C49400AA82FC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		E368780E17B7E05C00AA82FC /* MLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNavigationController.h; sourceTree = "<group>"; };
+		E368780F17B7E05C00AA82FC /* MLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNavigationController.m; sourceTree = "<group>"; };
 		E397F6DB17A6ABC200C54A51 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
 		E397F6DC17A6ABC200C54A51 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		E397F6E017A6B1BD00C54A51 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -822,6 +825,7 @@
 		CE7DE281176EEFA500996FD6 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				E368780D17B7E03A00AA82FC /* MultiLayerNavigation */,
 				E3C6004C17B6A99C0083C637 /* Reachability */,
 				E3D4A51517B1406200DBF94F /* JASidePanels */,
 				E30DD00F17AD631300B5053F /* MBProgressHUD */,
@@ -1283,6 +1287,15 @@
 				E30DD01117AD637900B5053F /* MBProgressHUD.m */,
 			);
 			name = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		E368780D17B7E03A00AA82FC /* MultiLayerNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				E368780E17B7E05C00AA82FC /* MLNavigationController.h */,
+				E368780F17B7E05C00AA82FC /* MLNavigationController.m */,
+			);
+			name = MultiLayerNavigation;
 			sourceTree = "<group>";
 		};
 		E397F6DA17A6ABA900C54A51 /* Tools */ = {
@@ -1748,6 +1761,7 @@
 				E3BBC1D717B55541006886CF /* ColySidePanelController.m in Sources */,
 				E3C6005517B6ACF20083C637 /* CheckNetWork.m in Sources */,
 				E368780C17B7C49400AA82FC /* Reachability.m in Sources */,
+				E368781017B7E05C00AA82FC /* MLNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
