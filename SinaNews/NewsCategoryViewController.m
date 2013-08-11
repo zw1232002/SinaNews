@@ -43,8 +43,6 @@
         catDic = nil;catObject = nil;
       }
       
-//      NSLog(@"\n%d",[self.categoryArray count]);
-
       self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"leftchannel_bg@2x"]];
       
       //顶部背景
@@ -103,7 +101,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  return 50;
+  return newsCategoryCellHeight;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -121,7 +119,6 @@
   cell.categoryName.text = cat.title;
   cell.categoryThumb.image = [UIImage imageNamed:cat.thumb];
   
-//  NSLog(@"\n%@,%@",cat.title,defaultTypeName);
   if ([cat.title isEqual: defaultTypeName])
   {
     //设置默认选中

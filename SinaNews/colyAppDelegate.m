@@ -17,6 +17,11 @@
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   // Override point for customization after application launch.
   
+//  [[CheckNetWork alloc] CheckNetworkStatus];
+  
+  //显示状态栏
+  [application setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+  
   //设置
   self.mainViewController = [[ColySidePanelController alloc] init];
   
@@ -35,8 +40,7 @@
   
   
   self.window.rootViewController = self.mainViewController;
-  
-  application.statusBarStyle = UIStatusBarStyleBlackOpaque;
+ 
 
   [self.window makeKeyAndVisible];
   return YES;

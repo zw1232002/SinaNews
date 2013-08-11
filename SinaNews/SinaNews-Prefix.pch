@@ -13,12 +13,21 @@
   #import <Foundation/Foundation.h>
 #endif
 
+//
+#define DEBUG
+
+#import "CheckNetWork.h"
+
 
 #define kDeviceWidth [UIScreen mainScreen].bounds.size.width
 #define kDeviceHeight [UIScreen mainScreen].bounds.size.height
 #define leftChanelWidth 220
 
 #define perPageNewsCount 10
+
+#define newsCellHeight 88
+
+#define newsCategoryCellHeight 50
 
 #define lightGreyColor [UIColor colorWithRed:80.0f/255.0f green:80.0f/255.0f  blue:80.0f/255.0f  alpha:1.0f]
 
@@ -32,6 +41,15 @@
 #define newDetailURL(id) [NSString stringWithFormat:@"http://1.qingbin.sinaapp.com/api/html/%d.html",id]
 
 
+
+//判断是否处于debug模式
+#ifdef DEBUG
+#define debugLog(...) NSLog(__VA_ARGS__)
+#define debugMethod() NSLog(@"%s", __func__)
+#else
+#define debugLog(...)
+#define debugMethod()
+#endif
 
 
 

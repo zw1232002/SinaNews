@@ -62,7 +62,7 @@
 //当网页正在加载时，显示正在载入
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-  //  NSLog(@"\nwebview start loading");
+  debugLog(@"\nwebview start loading");
   self.loadingView = [[UIView alloc] initWithFrame:CGRectMake(-20, -30, 340, 510)];
   [self.loadingView setBackgroundColor:[UIColor whiteColor]];
   [self.view addSubview:self.loadingView];
@@ -84,7 +84,7 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-  //  NSLog(@"\nwebview finish loading");
+  debugLog(@"\nwebview finish loading");
   [self.activeView stopAnimating];
   [self.loadingView removeFromSuperview];
   

@@ -71,7 +71,7 @@
 {
   [super viewDidLoad];
 
-  
+  //初始化新闻数组
   self.newsListArray = [NSMutableArray new];
 }
 
@@ -100,6 +100,8 @@
 {
   NSString *url = [NSString stringWithString:requestURL(self.typeName, self.page, perPageNewsCount)];
   
+  debugLog(@"%@",url);
+  
   //因为url中有中文，这里进行一下url转义
   NSString *encodeURL = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
   
@@ -121,7 +123,12 @@
                                          
   } failure:^(NSURLRequest *request, NSURLResponse *response, NSError *error, id jj)
   {
-    NSLog(@"\nThe http request error:%@",error);
+    
+    [Tools tipWithText:@"亲，网络无连接，请检查网络设置！" andView:self.navigationController.view];
+    self.newsListTable.pullTableIsLoadingMore = NO;
+    self.newsListTable.pullTableIsRefreshing = NO;
+
+    debugLog(@"\nThe http request error:%@",error);
   }];
   
   [operation start];
@@ -193,7 +200,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  return 88;
+  return newsCellHeight;
 }
 
 
