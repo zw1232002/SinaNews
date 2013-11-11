@@ -33,9 +33,13 @@
 
 ### 4.App截图 ###
 
-https://raw.github.com/zw1232002/SinaNews/master/1.png
-
 ![启动界面](./1.png)
+
+![新闻列表](./2.png)
+
+![新闻详细](./3.png)
+
+![左侧列表](./4.png)
 
 
 
