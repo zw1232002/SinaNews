@@ -33,12 +33,12 @@
 
 #define cccColor [UIColor colorWithRed:236.0/255.0f green:238.0/255.0f blue:239.0/255.0f alpha:1.0f]
 
-#define requestURL(typeName,pageNo,pagePer) [NSString stringWithFormat:@"http://1.qingbin.sinaapp.com/api/lists?ntype=%@&pageNo=%d&pagePer=%d&list.htm",typeName,pageNo,pagePer]
+#define requestURL(typeName,pageNo,pagePer) [NSString stringWithFormat:@"http://qingbin.sinaapp.com/api/lists?ntype=%@&pageNo=%d&pagePer=%d&list.htm",typeName,pageNo,pagePer]
 
 #define defaultTypeName @"图片"
 
 
-#define newDetailURL(id) [NSString stringWithFormat:@"http://1.qingbin.sinaapp.com/api/html/%d.html",id]
+#define newDetailURL(id) [NSString stringWithFormat:@"http://qingbin.sinaapp.com/api/html/%d.html",id]
 
 
 
