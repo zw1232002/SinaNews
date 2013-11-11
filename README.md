@@ -31,4 +31,12 @@
 
 
 
+### 4.App截图 ###
+
+https://raw.github.com/zw1232002/SinaNews/master/1.png
+
+![启动界面](./1.png)
+
+
+
 ### 版权所有 coly
